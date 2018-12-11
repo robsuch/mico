@@ -1,0 +1,129 @@
+/* ------- Font size 120% ------- */
+body,
+.dropdown-menu {
+  font-size: 16px; }
+
+.banner {
+  height: 70px; }
+
+.banner__item > .btn-link {
+  height: 70px;
+  width: 74px; }
+
+.banner__search form {
+  margin-right: 5px; }
+
+.main-menu__position {
+  display: none; }
+
+.form-control {
+  font-size: 16px;
+  height: 37px; }
+
+.btn {
+  font-size: 16px; }
+
+.btn-lg,
+.btn-group-lg > .btn {
+  font-size: 20px; }
+
+.btn-sm,
+.btn-group-sm > .btn {
+  font-size: 14px; }
+
+.btn-xs,
+.btn-group-xs > .btn {
+  font-size: 14px; }
+
+.tooltip {
+  font-size: 14px; }
+
+pre,
+pre code {
+  font-size: 14px; }
+
+.lead {
+  font-size: 19px; }
+
+.progress-bar {
+  font-size: 14px; }
+
+.collapsible-line .collapsible-line__icon {
+  top: 3px; }
+
+.form-horizontal .has-feedback .form-control-feedback {
+  right: 18px; }
+
+.form-control-feedback {
+  line-height: 37px; }
+
+.select2-container--bootstrap .select2-selection--single,
+.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field {
+  height: 37px;
+  font-size: 16px; }
+
+.select2-selection__choice {
+  font-size: 16px; }
+
+.jumbotron p {
+  font-size: 24px; }
+
+h1 {
+  font-size: 2.86rem; }
+
+h2 {
+  font-size: 2.63rem; }
+
+h3 {
+  font-size: 2.18rem; }
+
+h4 {
+  font-size: 1.83rem; }
+
+h5 {
+  font-size: 1.6rem; }
+
+h6 {
+  font-size: 1.37rem; }
+
+.hr-icon-12 {
+  font-size: 14px !important;
+  width: 23px; }
+
+.hr-icon-14 {
+  font-size: 16px !important;
+  width: 25px; }
+
+.hr-icon-20 {
+  font-size: 23px !important;
+  width: 32px; }
+
+.hr-icon-24 {
+  font-size: 27px !important;
+  width: 35px; }
+
+.hr-icon-28 {
+  font-size: 32px !important;
+  width: 41px; }
+
+.hr-icon-38 {
+  font-size: 43px !important;
+  width: 52px; }
+
+.hr-icon-48 {
+  font-size: 55px !important;
+  width: 64px; }
+
+.hr-icon-60 {
+  font-size: 68px !important;
+  width: 77px; }
+
+.hr-icon-80 {
+  font-size: 91px !important;
+  width: 100px; }
+
+.hr-icon-100 {
+  font-size: 114px !important;
+  width: 123px; }
+
+/*# sourceMappingURL=hr-font-size-lg.css.map */

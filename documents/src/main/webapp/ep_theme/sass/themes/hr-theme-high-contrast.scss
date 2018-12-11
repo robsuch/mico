@@ -1,0 +1,347 @@
+/* ------- Theme "High contrast" ------- */
+@import "../var-colors";
+
+
+/* ------ Themes colors variables ------- -*/
+$theme-primary-dark:  $yellow-200;  $theme-primary-dark-text:   $grey-900;
+$theme-primary:       $yellow-100;  $theme-primary-text:        $grey-900;
+$theme-secondary:     $blue-100;    $theme-secondary-text:      $grey-900;
+$theme-accent:        $grey-700;    $theme-accent-text:         #fff;
+$theme-background:    $blue-900;    $theme-background-text:     #fff;
+$theme-light:         $grey-800;    $theme-light-text:          #fff;
+
+$theme-text-color:  #fff;         $theme-link-color: $yellow-200;   $theme-link-hover-color: $orange-300;
+$box-bg:            $indigo-900;
+$gradient-body:     false;        $gradient-banner: false;
+
+
+@import "hr-theme";
+
+
+
+/* ------- Global ------- */
+body { 
+	background-image: none !important; 
+	background-color: $theme-background; 
+}
+
+
+
+/* ------- Background related ------- */
+.bg-success,
+.bg-info,
+.bg-warning,
+.bg-danger { 
+	color: #212121; 
+}
+
+.bg-striped { 
+	background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.3) 25%, 
+		rgba(255, 255, 255, 0) 25%, 
+		rgba(255, 255, 255, 0) 50%, 
+		rgba(0, 0, 0, 0.3) 50%, 
+		rgba(0, 0, 0, 0.3) 75%, 
+		rgba(255, 255, 255, 0) 75%, 
+		rgba(255, 255, 255, 0)); 
+}
+
+.bg-striped-inverted { 
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.3) 25%, 
+		rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, 
+		rgba(255, 255, 255, 0.3) 50%, 
+		rgba(255, 255, 255, 0.3) 75%, 
+		rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0)); 
+}
+
+
+/* ------- Layout ------- */
+.banner { 
+	background-color: $grey-50; 
+}
+
+#layout-main > .container,
+#layout-main > .container-fluid { 
+	box-shadow: none; 
+}
+
+/* ------- Headings ------- */
+h4,
+h5,
+h6 { 
+	color: $grey-200; 
+}
+
+.text-muted { 
+	color: $grey-300;
+}
+
+
+/* ------- Dropdown menu ------- */
+.dropdown-menu { 
+	background-color: $grey-800; 
+}
+
+.dropdown-menu > li > a { 
+	color: $theme-link-color; 
+}
+
+
+.table-striped > tbody > tr:nth-of-type(2n+1),
+.list-striped > li:nth-of-type(2n+1) { 
+	background-color: $grey-800; 
+}
+
+.table-hover > tbody > tr:hover { 
+	background-color: $theme-accent; 
+	color: $theme-accent-text; 
+}
+
+
+/* ------- Back to top button ------- */
+.btn-back-top { 
+	background-color: $grey-200; 
+	color: $grey-900; 
+}
+
+.btn-back-top:hover { 
+	color: $grey-900; 
+}
+
+
+/* ------- Navigation - Tabs & Pills ------- */
+.nav-tabs,
+.nav-primary { 
+	border-bottom-color: #fff; 
+}
+
+.nav-tabs > li > a,
+.nav-primary > li > a { 
+	background-color: $box-bg; 
+	border-color: #fff; 
+}
+
+.nav-tabs > li > a,
+.nav-primary > li > a {
+  background-color: $grey-700;
+  color: #fff;
+  border-bottom-color: $theme-primary;
+
+  &:hover,
+  &:focus {
+    border-color: $theme-primary;
+    background-color: transparent;
+    color: $theme-primary;
+  }
+}
+
+.nav-tabs > li.active > a,
+.nav-primary > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-primary > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-primary > li.active > a:focus { 
+	background-color: $theme-primary; 
+	color: $grey-700; 
+	border-color: $theme-primary; 
+	border-bottom-color: transparent; 
+}
+
+.nav-pills > li > a { 
+  background-color: $theme-accent; 
+
+  &:hover,
+  &:focus {
+    border-color: $theme-primary; 
+	background-color: $theme-primary; 
+	color: $grey-700; 
+  }
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus { 
+	border-color: $theme-primary; 
+	background-color: $theme-primary; 
+	color: $grey-700; 
+}
+
+// Vertical nav
+.nav-vertical-title,
+.nav-vertical-list ul > .has-submenu > a {
+  background-color: $indigo-700;
+  color: $theme-link-color;
+}
+.nav-vertical-list a {
+	background-color: $theme-primary; 
+	color: $grey-700; 
+}
+.nav-vertical-list .active a {
+  color: $grey-700;
+  border-left-color: $grey-700;
+}
+
+
+
+/* ------- Pagination ------- */
+.pagination > li > a,
+.pagination > li > span,
+.pagination > .disabled > span,
+.pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus,
+.pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.pagination > .disabled > a:focus,
+.pager li > a,
+.pager li > span { 
+	background-color: $box-bg; 
+	border-color: #fff; 
+}
+
+
+/* ------- Tiles. ------- */
+.tile,
+.tile__front { 
+	background-color: $indigo-700; 
+}
+
+.tile__icon { 
+	text-shadow: none; 
+}
+
+.tile__title { 
+	color: #fff; 
+}
+
+.tile__description { 
+	background-color: $indigo-700; 
+}
+
+
+/* ------- Datepicker ------- */
+.Zebra_DatePicker { 
+	color: #212121; 
+}
+
+.Zebra_DatePicker td.dp_current { 
+	color: $box-bg; 
+}
+
+
+/* ------- Settings panel ------- */
+.settings-menu-box,
+.settings-menu-btn,
+.settings-menu-btn:hover,
+.settings-menu-btn:focus { 
+	background-color: $box-bg; 
+	color: $theme-text-color; 
+}
+
+
+/* ------- Buttons ------- */
+.btn-transparent { 
+	color: #fff;
+
+	&.disabled {
+		color: #fff;
+	}
+}
+
+.btn-link { 
+	color: $theme-link-color; 
+}
+
+.scroll-spy-menu .nav > li > a { 
+	color: #fff; 
+}
+
+
+/* ------- Select2 ------- */
+.select2-container--bootstrap .select2-dropdown { 
+	background-color: $grey-800; 
+}
+
+.select2-container--bootstrap .select2-results__option[aria-selected=true] { 
+	background-color: $grey-700; 
+	color: $text-color; 
+}
+
+
+/* ------- JS Tree ------- */
+.secondary-menu-multi.jstree-default .jstree-hovered { 
+	background-color: $theme-accent; 
+	color: $theme-accent-text; 
+}
+
+
+
+/* ------- MISC. ------- */
+.timeline__highlight { 
+	background-color: $box-bg; 
+}
+
+.timeline__item.active .timeline__highlight { 
+	background-color: $theme-primary; 
+}
+
+.fc-unthemed .fc-bg .fc-today { 
+	background-color: $grey-800; 
+}
+
+.text-highlight { 
+	background-color: #fff; 
+}
+
+.popover { 
+	color: #212121; 
+}
+
+.panel-footer { 
+	background-color: $indigo-700; 
+}
+
+.modal-body { 
+	background-color: $theme-background; 
+}
+
+.list-group-item { 
+	background-color: $indigo-700; 
+}
+
+.list-group-item,
+a.list-group-item,
+button.list-group-item { 
+	color: #fff; 
+}
+
+.progress { 
+	background-color: $indigo-700; 
+}
+
+
+/* ------- Charts ------- */
+canvas { 
+	background-color: #fff; 
+}
+
+
+/* ------- Styleguide specificities ------- */
+.kss-layout-demo { 
+	background-color: $theme-background; 
+}
+
+#kssref-1-2-2 .text-white { 
+	background-color: transparent; 
+}
+
+#kssref-1-2-3 .bg-dark { 
+	background-color: #fff; 
+}
+
+.kss-menu-left,
+.kss-menu-right { 
+	background-color: $grey-800; 
+}
+
+.kss-scroll-spy .scroll-spy-menu { 
+	background-color: $theme-background; 
+}

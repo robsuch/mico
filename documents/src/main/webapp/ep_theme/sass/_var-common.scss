@@ -1,0 +1,288 @@
+// Scaffolding
+$body-bg:           $theme-background;
+$text-color:        $grey-900;
+$link-color:        $theme-primary-dark;
+$link-hover-color:  $blue-900;
+
+$brand-primary: $light-blue-700;  $brand-primary-text:  $light-blue-700-text;
+$brand-success: $green-400;       $brand-success-text:  $green-400-text;
+$brand-info:    $light-blue-100;  $brand-info-text:     $light-blue-100-text;
+$brand-warning: $amber-400;       $brand-warning-text:  $amber-400-text;
+$brand-danger:  $red-400;         $brand-danger-text:   $red-400-text;
+
+// Iconography
+$icon-font-path: "../../fonts/bootstrap/";
+
+// Typography
+$font-family-sans-serif:  'Open Sans', Arial, sans-serif;
+
+// Tables
+$table-bg-accent:     $grey-100;
+$table-bg-hover:      $theme-accent;
+$table-color-hover:   $theme-accent-text;
+$table-border-color:  $grey-400;
+
+// Buttons
+$btn-default-color:       $text-color;
+$btn-default-bg:          $grey-200;
+$btn-default-border:      $grey-400;
+
+$btn-primary-color:       $theme-primary-text;
+$btn-primary-bg:          $theme-primary;
+$btn-primary-border:      $theme-primary-dark;
+
+$btn-success-color:       #fff;
+$btn-success-bg:          $brand-success;
+$btn-success-border:      darken($btn-success-bg, 10%);
+
+$btn-info-color:          $text-color;
+$btn-info-bg:             $brand-info;
+$btn-info-border:         darken($btn-info-bg, 10%);
+
+$btn-warning-color:       $text-color;
+$btn-warning-bg:          $brand-warning;
+$btn-warning-border:      darken($btn-warning-bg, 10%);
+
+$btn-danger-color:        #fff;
+$btn-danger-bg:           $brand-danger;
+$btn-danger-border:       darken($btn-danger-bg, 10%);
+
+$btn-dark-color:        #fff;
+$btn-dark-bg:           $grey-700;
+$btn-dark-border:       darken($btn-dark-bg, 10%);
+
+$btn-link-disabled-color: $grey-200;
+
+// Forms
+$input-bg-disabled:       $grey-100;
+$input-color:             $text-color;
+$input-border:            $grey-400;
+$input-border-focus:      $theme-primary;
+$input-color-placeholder: $grey-500;
+$legend-color:            $text-color;
+$legend-border-color:     $grey-50;
+$input-group-addon-bg:    $grey-50;
+
+// Dropdowns
+$dropdown-link-color:           $text-color;
+$dropdown-link-hover-color:     $text-color;
+$dropdown-fallback-border:      $grey-200;
+$dropdown-divider-bg:           $grey-200;
+$dropdown-link-hover-bg:        $theme-accent;
+$dropdown-link-disabled-color:  $grey-500;
+$dropdown-header-color:         $grey-200;
+
+// Grid
+$grid-float-breakpoint:     992px;
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1);
+
+// Navbar
+$navbar-margin-bottom:                0;
+$navbar-default-color:                #fff;
+$navbar-default-bg:                   $grey-800;
+
+$navbar-default-link-color:           #fff;
+$navbar-default-link-hover-color:     $theme-accent-text;
+$navbar-default-link-hover-bg:        $theme-accent;
+$navbar-default-link-active-color:    $theme-primary-text;
+$navbar-default-link-active-bg:       $theme-primary;
+$navbar-default-link-disabled-color:  $grey-500;
+$navbar-default-link-disabled-bg:     transparent;
+
+$navbar-default-toggle-hover-bg:      $theme-accent;
+$navbar-default-toggle-icon-bar-bg:   #fff;
+$navbar-default-toggle-border-color:  #fff;
+
+// Navs
+$nav-link-hover-bg:             $theme-accent;
+$nav-link-hover-color:          $theme-accent-text;
+
+$nav-disabled-link-color:       $grey-200;
+$nav-disabled-link-hover-color: $grey-200;
+
+// Tabs
+$nav-tabs-border-color:                       $grey-400;
+
+$nav-tabs-link-hover-border-color:            $grey-200;
+
+$nav-tabs-active-link-hover-bg:               $theme-primary;
+$nav-tabs-active-link-hover-color:            $theme-primary-text;
+$nav-tabs-active-link-hover-border-color:     $theme-primary;
+
+$nav-tabs-justified-link-border-color:        $grey-200;
+$nav-tabs-justified-active-link-border-color: #fff;
+
+// Pills
+$nav-pills-border-radius:                     0;
+
+// Pagination
+$pagination-border:           $grey-400;
+$pagination-bg:               #fff;
+
+$pagination-hover-bg:         $theme-accent;
+$pagination-hover-color:      $theme-accent-text;
+$pagination-hover-border:     $grey-700;
+
+$pagination-disabled-color:   $grey-500;
+$pagination-disabled-border:  $grey-400;
+
+$pagination-active-color:     $theme-primary-text;
+$pagination-active-bg:        $theme-primary;
+$pagination-active-border:    $grey-400;
+
+//Pager
+$pager-bg:              $pagination-bg;
+$pager-border:          $pagination-border;
+
+$pager-hover-bg:        $pagination-hover-bg;
+$pager-hover-color:     $pagination-hover-color;
+
+$pager-active-bg:       $pagination-active-bg;
+$pager-active-color:    $pagination-active-color;
+
+$pager-disabled-color:  $pagination-disabled-color;
+
+// Workflow
+$workflow-color: $text-color;
+$workflow-bg:    $brand-info;
+
+$workflow-disabled-color: $grey-500;
+$workflow-disabled-bg:    $grey-200;
+
+$workflow-active-color:   #fff;
+$workflow-active-bg:      $brand-primary;
+
+// Jumbotron
+$jumbotron-bg:  $theme-background;
+
+// Form states and alerts
+$alert-border-radius:   0;
+
+$state-primary-text:    $light-blue-900;
+$state-primary-bg:      $light-blue-600;
+$state-primary-border:  $light-blue-700;
+
+$state-success-text:    $green-700;
+$state-success-bg:      $green-50;
+$state-success-border:  $green-300;
+
+$state-info-text:       $light-blue-700;
+$state-info-bg:         $light-blue-50;
+$state-info-border:     $light-blue-300;
+
+$state-warning-text:    $amber-800;
+$state-warning-bg:      $amber-50;
+$state-warning-border:  $amber-400;
+
+$state-danger-text:     $red-700;
+$state-danger-bg:       $red-50;
+$state-danger-border:   $red-200;
+
+// Popovers
+$popover-fallback-border-color: $grey-200;
+
+// Labels
+$label-default-bg:  $grey-500;
+$label-primary-bg:  $theme-primary;
+$label-success-bg:  $brand-success;
+$label-info-bg:     $brand-info;
+$label-warning-bg:  $brand-warning;
+$label-danger-bg:   $brand-danger;
+
+// Modals
+$modal-content-bg:            #fff;
+$modal-content-border-color:  rgba(0,0,0,.2);
+$modal-header-border-color:   $grey-300;
+$modal-footer-border-color:   $grey-300;
+$modal-backdrop-opacity:      .7;
+
+// Listgroups
+$list-group-border:             $table-border-color;
+$list-group-hover-color:        $theme-accent-text;
+$list-group-hover-bg:           $theme-accent;
+$list-group-active-color:       $theme-primary-text;
+$list-group-active-bg:          $theme-primary;
+$list-group-disabled-color:     $grey-200;
+$list-group-disabled-bg:        $grey-50;
+$list-group-link-color:         $text-color;
+$list-group-link-heading-color: $text-color;
+
+// Panels
+$panel-inner-border:        $grey-200;
+$panel-footer-bg:           $grey-50;
+
+$panel-default-text:        $text-color;
+$panel-default-border:      $grey-400;
+$panel-default-heading-bg:  $grey-200;
+
+$panel-primary-text:        $theme-primary-text;
+$panel-primary-border:      $theme-primary-dark;
+$panel-primary-heading-bg:  $theme-primary;
+
+$panel-success-text:        $text-color;
+$panel-success-border:      $state-success-border;
+$panel-success-heading-bg:  $state-success-bg;
+
+$panel-info-text:           $text-color;
+$panel-info-border:         $state-info-border;
+$panel-info-heading-bg:     $state-info-bg;
+
+$panel-warning-text:        $text-color;
+$panel-warning-border:      $state-warning-border;
+$panel-warning-heading-bg:  $state-warning-bg;
+
+$panel-danger-text:         $text-color;
+$panel-danger-border:       $state-danger-border;
+$panel-danger-heading-bg:   $state-danger-bg;
+
+// Thumbnails
+$thumbnail-bg:      #fff;
+$thumbnail-border:  $grey-200;
+
+// Wells
+$well-bg: $theme-background;
+
+// Badges
+$badge-bg:  $grey-500;
+
+// Breadcumb
+$breadcrumb-bg:           transparent;
+$breadcrumb-color:        $grey-700;
+$breadcrumb-active-color: $grey-500;
+$breadcrumb-separator:    ">";
+
+// Code
+$code-color:        $red-800;
+$code-bg:           $red-50;
+
+$kbd-bg:            $grey-700;
+
+$pre-bg:            $grey-50;
+$pre-color:         $grey-700;
+$pre-border-color:  $grey-500;
+
+// Type
+$component-offset-horizontal: 178px;
+$text-muted:                  $grey-500;
+$abbr-border-color:           $grey-700;
+$headings-small-color:        $grey-500;
+$blockquote-small-color:      $grey-500;
+$blockquote-font-size:        1.15em;
+$blockquote-border-color:     $theme-primary;
+$page-header-border-color:    $grey-50;
+$dl-horizontal-breakpoint:    768px;
+$hr-border:                   $grey-300;
+
+// Tiles
+$tile-height:       140px;
+$tile-icon-size:    80px;
+$tile-lg-height:    200px;
+$tile-lg-icon-size: 100px;
+$tile-sm-height:    80px;
+$tile-sm-icon-size: 38px;
+$tile-xs-height:    70px;
+$tile-xs-icon-size: 40px;
+
+// Footer
+$footer-bg:     $navbar-default-bg;
+$footer-color:  #fff;

@@ -1,0 +1,1263 @@
+/* ------- Components section ------- */
+
+/*
+Button
+
+Use any of the available button classes to quickly create a styled button.<br />
+Alternative text for screen reader is added automatically to display type of button.
+
+Markup: ../../markup/buttons.html
+
+.btn-default - Default
+.btn-dark - Dark
+.btn-primary - Primary
+.btn-info - Info
+.btn-success - Success
+.btn-warning - Warning
+.btn-danger - Danger
+.btn-transparent - Transparent
+.disabled - Disabled
+.btn-link - Button link
+
+Styleguide 4.1
+*/
+.btn {
+  position: relative;
+}
+
+.btn-dark {
+  @include button-variant($btn-dark-color, $btn-dark-bg, $btn-dark-border);
+}
+
+.btn-transparent {
+  @include button-variant($btn-default-color, transparent, $btn-default-border);
+}
+
+.btn-transparent.active,
+.btn-transparent:active,
+.btn-transparent:hover,
+.open > .btn-transparent.dropdown-toggle {
+  background-color: $grey-50;
+}
+
+.btn [class^="hr-icon__"],
+.btn [class*=" hr-icon__"],
+.btn-group > .btn [class^="hr-icon__"],
+.btn-group > .btn [class*=" hr-icon__"],
+.pager li [class^="hr-icon__"],
+.pager li [class*=" hr-icon__"] {
+  font-size: 20px;
+  display: inline-block;
+  margin: -8px -4px;
+  padding: 0 4px;
+  position: relative;
+  top: 4px;
+}
+
+.btn.btn-lg [class^="hr-icon__"],
+.btn.btn-lg [class*=" hr-icon__"],
+.btn-group.btn-group-lg > .btn [class^="hr-icon__"],
+.btn-group.btn-group-lg > .btn [class*=" hr-icon__"] {
+  top: 2px;
+}
+
+.btn.btn-xs [class^="hr-icon__"],
+.btn.btn-xs [class*=" hr-icon__"],
+.btn-group.btn-group-xs > .btn [class^="hr-icon__"],
+.btn-group.btn-group-xs > .btn [class*=" hr-icon__"] {
+  top: 2px;
+}
+
+.btn.disabled, 
+.btn[disabled], 
+fieldset[disabled] .btn {
+  color: $text-color;
+}
+
+.btn.disabled, 
+.btn[disabled], 
+fieldset[disabled] .btn,
+.btn.disabled:hover, 
+.btn[disabled]:hover, 
+fieldset[disabled] .btn:hover {
+  border-color: transparent;
+}
+
+.btn-link {
+  color: $text-color;
+
+  &.text-muted { 
+    color: $text-muted; 
+  }
+
+  &.text-primary { 
+    color: $state-primary-text; 
+  }
+
+  &.text-success { 
+    color: $state-success-text;
+  }
+
+  &.text-info { 
+    color: $state-info-text;
+  }
+
+  &.text-warning {
+    color: $state-warning-text;
+  }
+
+  &.text-danger {
+    color: $state-danger-text;
+  }
+}
+
+.btn-link:hover,
+.btn-link:focus {
+  text-decoration: none;
+}
+
+.input-group-btn .btn-default {
+  border-color: $input-border;
+}
+
+/*
+Button size
+
+Buttons can be displayed in different sizes.<br />
+Note that it works for any color of buttons.
+
+Markup: ../../markup/buttons-size.html
+
+.btn-lg - Large
+. - Default
+.btn-sm - Small
+.btn-xs - Very small
+
+Styleguide 4.1.1
+*/
+
+/*
+Button group
+
+Buttons can be grouped if they should be displayed in the same area.<br />
+Note that it works for any color and size of buttons.
+
+Markup: ../../markup/buttons-group.html
+
+Styleguide 4.1.2
+*/
+
+/*
+Button usage
+
+You are free to use any of available button color in your application, but it should follow several rules:
+
+Markup: ../../markup/buttons-usage.html
+
+Styleguide 4.1.3
+*/
+
+/*
+Button position
+
+Buttons should be placed at the same location on every applications:
+
+Markup: ../../markup/buttons-position.html
+
+Styleguide 4.1.4
+*/
+
+/*
+Dropdown
+
+Toggleable, contextual menu for displaying lists of links.<br />
+Two levels of dropdown are available (see example below).<br />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Usage</strong><br />
+    Dropdown can be used on any type of html tags, not only buttons or links.
+  </div>
+</div>
+
+Markup: ../../markup/dropdown.html
+
+Styleguide 4.2
+*/
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  overflow: hidden;
+  box-shadow: none;
+
+  &.has-padding {
+    padding: 8px 10px;
+  }
+}
+
+.dropdown-menu > li > a {
+  text-decoration: none;
+}
+
+.dropdown-menu > li.is-open > a {
+  color: $theme-accent-text;
+}
+
+.dropdown-menu li.active > a,
+.dropdown-menu li.active > a:hover {
+  background-color: $theme-primary;
+  color: $theme-primary-text;
+}
+
+.dropdown-menu > li > a:hover {
+  color: $theme-accent-text;
+}
+
+.dropdown-menu__level0 > li {
+  position: relative;
+  float: left;
+}
+
+.dropdown-menu__level1 {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+
+  > li.is-open {
+    background-color: $theme-accent;
+    color: $theme-accent-text;
+  }
+}
+
+.dropdown-menu__level2 {
+  white-space: nowrap;
+  list-style: none;
+  border-left: 1px solid $grey-200;
+  padding-left: 10px;
+  padding-right: 5px;
+
+  > li {
+    > a {
+      display: block;
+      line-height: 1.1;
+      padding: 3px 10px;
+      text-decoration: none;
+    }
+
+    &.active > a,
+    &.active > a:hover,
+    &.active > a:focus {
+      background-color: transparent;
+      font-weight: bold;
+      color: $link-color;
+    }
+  }
+}
+
+.dropdown-menu__level0.dropdown-menu-right {
+  > li {
+    float: right;
+
+    &:last-child {
+      left: 0 !important;
+    }
+  }
+}
+
+.dropdown-menu-lg {
+  min-width: 300px;
+}
+
+/*
+Collapsible item
+
+Provides flexible system to toggle visibility of items. It could be applied to any kind of element.<br />
+All buttons "See corresponding code" in that styleguide use that component.
+
+Markup: ../../markup/collapsible-items.html
+
+Styleguide 4.3
+*/
+.list-group a[data-toggle="collapse"][aria-expanded="true"] {
+  background-color: $theme-primary;
+  border-color: $theme-primary;
+  color: $theme-primary-text;
+}
+
+.list-group .collapse,
+.list-group .collapsing {
+  border-left: 5px solid $theme-primary;
+  padding: 10px 15px;
+}
+
+.list-group {
+	+ .list-group {
+		li:first-child {
+			border-top: 0;
+		}
+	}
+}
+
+/*
+Collapsible line
+
+Optional display for collapsible items.<br />
+If you don't use it with a white background for the icon, remove the "box" class on it.
+
+Markup: ../../markup/collapsible-line.html
+
+Styleguide 4.3.1
+*/
+.collapsible-line__btn {
+  width: 100%;
+  padding: 0;
+  height: 28px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  &[aria-expanded="true"] .collapsible-line__icon::before {
+    content: "\f139";
+  }
+
+  &[aria-expanded="false"] .collapsible-line__icon::before {
+    content: "\f13a";
+  }
+}
+
+.collapsible-line .collapsible-line__icon {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  margin-left: -16px;
+  box-shadow: none;
+}
+
+/*
+Panel
+
+Used to put your content in a box.<br />
+Alternative text for screen reader is added automatically to display the type of panel.<br />
+Panel headers and footers are optional.
+
+Markup: ../../markup/panels.html
+
+.panel-default - Default
+.panel-primary - Primary
+.panel-success - Success
+.panel-info - Info
+.panel-warning - Warning
+.panel-danger - Danger
+
+Styleguide 4.4
+*/
+h2.panel-title,
+h3.panel-title {
+  border-bottom: none;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.4285;
+}
+
+.panel {
+  border-radius: 0;
+}
+
+.panel-heading {
+  border-radius: 0;
+
+  a,
+  a:hover,
+  a:focus {
+    color: $text-color;
+  }
+}
+
+/*
+Panel scrollable
+
+Used for long content with inside scrolling.<br />
+Panel headers and footers are optional. A button can be added in the footer to purpose an action to the user.<br />
+Scrollable panel is available for each panel type, examples are with <code>panel-default</code>
+
+Markup: ../../markup/panels-scrollable.html
+
+.panel-scrollable - Default
+.panel-scrollable-small - Small
+
+Styleguide 4.4.1
+*/
+.panel-scrollable {
+	max-height: 60rem;
+	overflow-y: auto;
+}
+
+.panel-scrollable-small {
+	max-height: 25rem;
+}
+
+/*
+Label
+
+Used to add specific information to a text.<br />
+Alternative text for screen reader is added automatically to display the type of label.
+
+Markup: ../../markup/labels.html
+
+.label-default - Default
+.label-primary - Primary
+.label-success - Success
+.label-info - Info
+.label-warning - Warning
+.label-danger - Danger
+.label-transparent - Transparent
+
+Styleguide 4.5
+*/
+.label {
+  padding: 0.2em 0.4em 0.2em;
+  font-weight: 600;
+}
+
+.label-primary {
+  color: $theme-primary-text;
+}
+
+.label-info,
+.label-warning {
+  color: $text-color;
+}
+
+.label-transparent {
+  @include label-variant(transparent);
+  border: 1px solid $grey-500;
+  color: $text-color;
+}
+
+/*
+Large label
+
+Large labels may be used to highlight specific text or section.
+
+Markup: ../../markup/label-lg.html
+
+Styleguide 4.5.1
+*/
+.label-lg {
+  font-size: 0.85em;
+  text-align: left;
+  padding: 0.4em 0.6em;
+}
+
+/*
+Alert
+
+<p>Provides contextual feedback messages for typical user actions with a handful of available and flexible alert messages.<br />
+Alternative text for screen reader is added automatically to display the type of alert.</p>
+
+<p>The position of the alert depends of the context:
+<ul>
+<li>For general alerts : on the top of the page</li>
+<li>For component-related alerts : on the top of the component</li>
+<li>For form feedback alerts : on the top of the form</li>
+</ul>
+
+Markup: ../../markup/alerts.html
+
+.alert-success - Success
+.alert-info - Info
+.alert-warning - Warning
+.alert-danger - Danger
+
+Styleguide 4.6
+*/
+.alert-success,
+.alert-info,
+.alert-warning,
+.alert-danger {
+  color: $text-color;
+}
+
+.alert-sm {
+  padding: 5px;
+
+  &.alert-dismissible {
+    padding-right: 20px;
+
+    .close {
+      right: -16px;
+    }
+  }
+}
+
+/*
+Alert with icons
+
+You can add an icon corresponding to the alert message by using classes "<em>alert-icon</em>" and "<em>alert-body</em>" (see examples).
+
+Markup: ../../markup/alerts-icon.html
+
+Styleguide 4.6.1
+*/
+.alert-icon {
+  float: left;
+}
+
+.alert-body {
+  padding-left: 55px;
+}
+
+/*
+Alert position
+
+We should consider two type of alert messages:
+<dl class="dl-horizontal dl-wrap">
+  <dt>Global messages</dt>
+  <dd>General message, related to the whole page or application. It should be displayed on top of the <a href="section-1.html#kssref-1-1-4">Main content section</a>, before the breadcrumb.</dd>
+  <dt>Contextual messages</dt>
+  <dd>Message related to a form, a specific section of the page, or an action the user made. It should be displayed close to the corresponding section, preferably on top of it.</dd>
+</dl>
+
+Styleguide 4.6.2
+*/
+
+/*
+Popup
+
+Provides easy to use popups for informational messages, dialog boxes, etc.<br />
+It should also be used for confirmation messages.
+
+Markup: ../../markup/popup.html
+
+.modal-sm - Small popup
+. - Default popup
+.modal-lg - Large popup
+
+Styleguide 4.7
+*/
+.modal-header,
+.modal-footer {
+  text-align: center;
+}
+
+.modal-title {
+  color: $grey-700;
+	font-weight: bold;
+}
+
+.modal {
+  text-align: center;
+  padding: 0 !important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/*
+Listgroup
+
+Can be used to display lists of links, buttons, or any kind of items.
+
+Markup: ../../markup/listgroup.html
+
+Styleguide 4.8
+*/
+a.list-group-item {
+  text-decoration: none;
+}
+
+a.list-group-item:hover,
+a.list-group-item:focus,
+button.list-group-item:hover,
+button.list-group-item:focus {
+  color: $list-group-hover-color;
+}
+
+.list-group-item {
+  &.bg-primary { 
+    background-color: $state-primary-bg;
+    color: $state-primary-text; 
+  }
+  
+  &.bg-success { 
+    background-color: $state-success-bg;
+    color: $state-success-text; 
+  }
+  
+  &.bg-info { 
+    background-color: $state-info-bg;
+    color: $state-info-text; 
+  }
+  
+  &.bg-warning { 
+    background-color: $state-warning-bg;
+    color: $state-warning-text; 
+  }
+  
+  &.bg-danger { 
+    background-color: $state-danger-bg;
+    color: $state-danger-text; 
+  }
+}
+
+
+/*
+Tooltips
+
+Displays useful information when hovering an item.<br />
+It could be added to any element.<br />
+<div class="alert alert-info" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Mouse hover</strong><br />
+    Keep in mind that some devices (like tablets) do not manage mouse hover. So information in tooltips should not be critical.
+  </div>
+</div>
+<div class="alert alert-warning no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__exclamation-triangle hr-icon-38 text-warning"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Accessibility</strong><br />
+    When using tooltips, make sure to provide an accessible version of the information, by putting text and not only icons, or by using the "<em>sr-only</em>" class (see example below).
+  </div>
+</div>
+
+Markup: ../../markup/tooltips.html
+
+Styleguide 4.9
+*/
+
+/*
+Spinner
+
+Provides visual feedback when system is working in background.
+
+Markup: ../../markup/spinner.html
+
+.spinner-sm - Small spinner
+. - Default spinner
+.spinner-lg - Large spinner
+
+Styleguide 4.10
+*/
+@keyframes spin {
+	to { transform: rotate(1turn); }
+}
+
+.spinner {
+	position: relative;
+	display: inline-block;
+	width: 5em;
+	height: 5em;
+	margin: 0 .5em;
+	font-size: 12px;
+	text-indent: 999em;
+	overflow: hidden;
+	animation: spin 1s infinite steps(8);
+}
+
+.spinner-sm { 
+  font-size: 6px; 
+}
+.spinner-lg { 
+  font-size: 24px; 
+}
+
+.spinner:before,
+.spinner:after,
+.spinner > div:before,
+.spinner > div:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 2.25em;
+	width: .5em;
+	height: 1.5em;
+	border-radius: .2em;
+	background: $grey-300;
+	box-shadow: 0 3.5em $grey-300;
+	transform-origin: 50% 2.5em;
+}
+
+.spinner:before {
+	background: darken($theme-primary, 20%);
+}
+
+.spinner:after {
+	transform: rotate(-45deg);
+	background: darken($theme-primary, 10%);
+}
+
+.spinner > div:before {
+	transform: rotate(-90deg);
+	background: $theme-primary;
+}
+
+.spinner > div:after {
+	transform: rotate(-135deg);
+	background: lighten($theme-primary, 10%);
+}
+
+/*
+Progress bar
+
+Displays the progress on a task.<br />
+Two different display are available.
+
+Styleguide 4.11
+*/
+
+/*
+Horizontal progress bar
+
+Display progress as a bar.<br />
+See <a href="http://getbootstrap.com/components/#progress">Bootstrap's documentation</a> for more examples.
+
+Markup: ../../markup/progress-bar.html
+
+Styleguide 4.11.1
+*/
+.progress-bar {
+  background-color: $theme-primary;
+  color: $theme-primary-text;
+  box-shadow: -1px -1px 0 rgba(0, 0, 0, 0.1) inset, 1px 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+
+.progress-bar-success {
+  background-color: $brand-success;
+  color: $brand-success-text;
+}
+
+.progress-bar-info {
+  background-color: $brand-info;
+  color: $brand-info-text;
+}
+
+.progress-bar-warning {
+  background-color: $brand-warning;
+  color: $brand-warning-text;
+}
+
+.progress-bar-danger {
+  background-color: $brand-danger;
+  color: $brand-danger-text;
+}
+
+.progress-sm {
+  height: 14px;
+}
+
+/*
+Circular progress bar
+
+Alternative display for progress bar. It is based on <a href="http://kottenator.github.io/jquery-circle-progress/">jquery-circle-progress</a> (version 1.2.0).<br />
+Different customization option are available. See <a href="https://github.com/kottenator/jquery-circle-progress">online documentation</a> for more information.<br />
+You can also find more complex examples on <a href="https://github.com/kottenator/jquery-circle-progress/wiki/Custom-layouts">developper's page</a>.
+<div class="alert alert-info" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Circle progress</strong><br />
+    To use circular progress bar in your page, make sure to include <strong>circle-progress.min.js</strong> in your pages (commented by default in skeleton page).
+  </div>
+</div>
+
+Markup: ../../markup/progress-bar-circle.html
+
+Styleguide 4.11.2
+*/
+.progress-circle {
+  text-align: center;
+  position: relative;
+}
+
+.progress-circle canvas {
+  background-color: transparent;
+}
+
+.progress-value {
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  font-size: 3rem;
+  left: 5px;
+  line-height: 50px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 100%;
+  height: 50px;
+  margin-top: -30px;
+  font-weight: 700;
+}
+
+/*
+Data table
+
+Provides advanced tables, with pagination, search, filters, etc. It is based on <a href="http://www.jquery-bootgrid.com/">Jquery Bootgrid</a> (version 1.3.1).<br />
+Lots of customization options are available. See <a href="http://www.jquery-bootgrid.com/Documentation">online documentation</a> for more information.<br />
+Provided js file also integrate enhancement to allow multiple search parameters. See <a href="https://github.com/rstaib/jquery-bootgrid/pull/280">this page for more information</a>.
+<div class="alert alert-info" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Bootgrid</strong><br />
+    To use data tables in your page, make sure to include <strong>jquery.bootgrid.min.js</strong> and <strong>jquery.bootgrid.min.css</strong> (commented by default in skeleton page).
+  </div>
+</div>
+If you have to use javascript elements in your table (like tooltips), make sure to reactivate theme once data table has been completely loaded. To do so, use "loaded.rs.jquery.bootgrid" event (see example below).
+
+Markup: ../../markup/data-tables.html
+
+Styleguide 4.12
+*/
+.bootgrid-header .actionBar .btn-group > .btn-group .dropdown-menu .dropdown-item:hover,
+.bootgrid-footer .infoBar .btn-group > .btn-group .dropdown-menu .dropdown-item:hover,
+.bootgrid-header .actionBar .btn-group > .btn-group .dropdown-menu .dropdown-item:focus,
+.bootgrid-footer .infoBar .btn-group > .btn-group .dropdown-menu .dropdown-item:focus {
+  color: $theme-accent-text;
+  background-color: $theme-accent;
+}
+
+.bootgrid-table th > .column-header-anchor {
+  color: $text-color;
+}
+
+/*
+Tree view
+
+Displays any list or set of data as an interactive tree.<br />
+It is based on <a href="https://www.jstree.com">jsTree</a> (version 3.3.1). There are lots of possible customizations (data source format, display options, additional features, ...).<br />
+You can find more examples and documentation on the <a href="https://www.jstree.com/">official site</a>.<br />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>jsTree</strong><br />
+    To use tree views in your page, make sure to include <strong>jstree.min.css</strong> and <strong>jstree.min.js</strong> (commented by default in skeleton page).
+  </div>
+</div>
+
+Styleguide 4.13
+*/
+.jstree-default {
+  .jstree-hovered,
+  .jstree-context {
+    background-color: $theme-accent;
+    color: $theme-accent-text;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .jstree-clicked {
+    background-color: $theme-primary;
+    color: $theme-primary-text;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  a {
+    white-space: normal !important;
+    height: auto;
+  }
+
+  li > ins {
+    vertical-align: top;
+  }
+
+  .jstree-anchor {
+    height: auto !important;
+    transition: none;
+  }
+
+  .jstree-leaf {
+    height: auto;
+
+    a {
+      height: auto !important;
+    }
+  }
+}
+
+/*
+HTML tree view
+
+Default display of tree view, with HTML data source.
+
+Markup: ../../markup/tree-html.html
+
+Styleguide 4.13.1
+*/
+
+/*
+JSON tree view
+
+Default display of tree view, with JSON data source.
+
+Markup: ../../markup/tree-json.html
+
+Styleguide 4.13.2
+*/
+
+/*
+Tree view plugins
+
+Additional plugins are available for jsTree. You are free to use them if needed.<br />
+Following example adds checkboxes, contextual menu, and allows drag and drop.<br />
+You can find the full list of plugin on the <a href="https://www.jstree.com/plugins/">plugin page</a>.
+
+Markup: ../../markup/tree-plugin.html
+
+Styleguide 4.13.3
+*/
+
+/*
+Timeline
+
+Provides a component to display full width timelines.<br />
+All steps after the currently active one are automatically collapsed.<br />
+A specific color can be set for each timeline item, by using class "<em>timeline__item--&lt;color&gt;</em>". Possible colors are the same as for buttons.<br />
+You can see a full example on <a href="../project/example/timeline.html">Timeline page</a>.
+
+Markup: ../../markup/timeline.html
+
+Styleguide 4.14
+*/
+.timeline {
+  position: relative;
+}
+
+.timeline__item {
+  padding-bottom: 30px;
+  position: relative;
+
+  &:before {
+    content: "";
+    background-color: $grey-300;
+    display: block;
+    height: 100%;
+    width: 2px;
+    top: 1px;
+    left: 44px;
+    position: absolute;
+    z-index: 1;
+  }
+
+  > div {
+    z-index: 2;
+  }
+
+  .box {
+    margin-bottom: 0;
+  }
+
+  &:first-child {
+    margin-top: 15px;
+  }
+
+  &:last-child:before {
+    display: none;
+  }
+
+  &.next {
+    opacity: 0.5;
+
+    &.expanded {
+      opacity: 1;
+    }
+  }
+}
+
+.timeline__collapse .timeline__item:first-child {
+  margin-top: 0;
+}
+
+.timeline__collapse .timeline__item:last-child:before {
+  display: block;
+}
+
+.timeline__highlight {
+  background-color: $grey-300;
+}
+
+.timeline__step {
+  background: $btn-dark-bg;
+  border-radius: 50%;
+  float: left;
+  height: 60px;
+  width: 60px;
+  line-height: 58px;
+  text-align: center;
+  font-weight: 600;
+  color: $btn-dark-color;
+  z-index: 2;
+}
+
+.timeline__label {
+  margin-left: 75px;
+}
+
+.timeline__elapsed {
+  margin-left: -30px;
+  margin-top: 15px;
+}
+
+.timeline__item.active {
+  .well { 
+    margin-left: 4px; 
+  }
+
+  .timeline__description { 
+    margin-left: -4px; 
+  }
+
+  .timeline__highlight { 
+    background-color: $theme-primary; 
+  }
+
+  .timeline__elapsed { 
+    color: $theme-primary-text; 
+  }
+}
+
+.timeline__item.success {
+  .timeline__highlight { 
+    background-color: $brand-success; 
+  }
+  .timeline__elapsed { 
+    color: #fff; 
+  }
+}
+
+.timeline__item.disabled {
+  .timeline__highlight { 
+    background-color: $grey-200; 
+  }
+  .timeline__elapsed { 
+    color: $grey-500; 
+  }
+}
+
+/*
+Calendar
+
+Provides a javascript based calendar to display events.<br />
+It relies on <a href="http://fullcalendar.io/">FullCalendar</a> (version 3.1.0). There are lots of possible customizations (display options, event management, ...).<br />
+You can find more examples and documentation on the <a href="http://fullcalendar.io/docs/">official site</a>.<br />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Fullcalendar</strong><br />
+    To use calendars in your page, make sure to include <strong>fullcalendar.min.css</strong>, <strong>moment.min.js</strong> and <strong>fullcalendar.min.js</strong> (commented by default in skeleton page).
+  </div>
+</div>
+All examples here use the data set displayed below (in collapsible block).
+
+Markup: ../../markup/calendar-data.html
+
+Styleguide 4.15
+*/
+.fc-unthemed th,
+.fc-unthemed td,
+.fc-unthemed thead,
+.fc-unthemed tbody,
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-row,
+.fc-unthemed .fc-content,
+.fc-unthemed .fc-popover {
+	border-color: $grey-300;
+}
+
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-popover .fc-header {
+	background: $grey-200;
+}
+
+.fc-unthemed .fc-popover .fc-header .fc-close {
+	color: $grey-700;
+}
+
+.fc-unthemed .fc-today {
+	background-color: $amber-50;
+}
+
+.fc-highlight {
+	background-color: $light-blue-200;
+}
+
+.fc-bgevent {
+	background-color: $red-200;
+}
+
+.fc-nonbusiness {
+	background-color: $grey-400;
+}
+
+.fc-state-default {
+	@include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  background-image: none;
+}
+
+.fc-event {
+  @include button-variant($theme-primary-text, $theme-primary, $theme-primary-dark);
+}
+
+.fc-more-cell {
+  position: absolute;
+  top: 0;
+  font-size: 0.85em;
+}
+
+.fc-past {
+  opacity: 0.3;
+}
+
+.fc-event .fc-bg {
+  opacity: 0;
+}
+
+// Stick header to top
+.fc-timeline .fc-scroller-clip.is-sticky {
+  position: fixed;
+  z-index: 100;
+  overflow: hidden;
+  min-height: 4.6rem;
+  background-color: #fff;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/*
+Month calendar
+
+Display events per month, week or day.<br />
+Clicking on an event display its desription.<br />
+Events can be moved (drag and drop).
+
+Markup: ../../markup/calendar-month.html
+
+Styleguide 4.15.1
+*/
+
+/*
+List calendar
+
+Display events as list.<br />
+This is useful when there are lots of events for each days.
+
+Markup: ../../markup/calendar-list.html
+
+Styleguide 4.15.2
+*/
+
+/*
+Agenda calendar
+
+Events are displayed as an agenda.
+
+Markup: ../../markup/calendar-agenda.html
+
+Styleguide 4.15.3
+*/
+
+/*
+Mini calendar
+
+To display a compact calendar, add class "<em>calendar-mini</em>".<br />
+Example below displays how to switch from one view mode to another.
+
+Markup: ../../markup/calendar-mini.html
+
+Styleguide 4.15.4
+*/
+.calendar-mini {
+
+  h2 {
+    font-size: 1.5rem;
+    margin-top: 4px;
+  }
+
+  .fc-toolbar {
+    margin-bottom: 4px;
+  }
+
+  &.fc button {
+    height: 1.8em;
+    padding: 0 0.3em;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .fc-day-number {
+    font-size: 11px;
+    padding: 0 2px;
+    height: 12px;
+  }
+
+  .fc-day-top {
+    height: auto;
+  }
+
+  .fc-month-view {
+    .fc-event {
+      font-size: 0;
+      overflow: hidden;
+      height: 2px;
+      border: none;
+    }
+
+    .fc-body {
+      cursor: pointer;
+    }
+
+    .fc-body .fc-row {
+      min-height: 45px;
+      max-height: 45px;
+    }
+
+    .fc-day-header {
+      font-size: 0.85em;
+    }
+
+    .fc-scroller {
+      overflow: hidden !important;
+    }
+  }
+
+  .fc-listDay-view {
+    font-size: 0.85em;
+  }
+
+  .fc-list-table td {
+    padding: 4px 6px;
+  }
+  
+  .fc-list-item {
+    cursor: pointer;
+  }
+}

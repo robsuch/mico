@@ -1,0 +1,347 @@
+/*!
+ *!HR Apps styleguide 1.4
+ */
+
+// Custom variables
+@import "var-colors";
+@import "var-common";
+
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Reset and dependencies
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+@import "bootstrap/glyphicons";
+
+// Core CSS
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+
+// Components
+@import "bootstrap/component-animations";
+@import "bootstrap/dropdowns";
+@import "bootstrap/button-groups";
+@import "bootstrap/input-groups";
+@import "bootstrap/navs";
+@import "bootstrap/navbar";
+@import "bootstrap/breadcrumbs";
+@import "bootstrap/pagination";
+@import "bootstrap/pager";
+@import "bootstrap/labels";
+@import "bootstrap/badges";
+@import "bootstrap/jumbotron";
+@import "bootstrap/thumbnails";
+@import "bootstrap/alerts";
+@import "bootstrap/progress-bars";
+@import "bootstrap/media";
+@import "bootstrap/list-group";
+@import "bootstrap/panels";
+@import "bootstrap/responsive-embed";
+@import "bootstrap/wells";
+@import "bootstrap/close";
+
+// Components w/ JavaScript
+@import "bootstrap/modals";
+@import "bootstrap/tooltip";
+@import "bootstrap/popovers";
+@import "bootstrap/carousel";
+
+// Utility classes
+@import "bootstrap/utilities";
+@import "bootstrap/responsive-utilities";
+
+// Icons
+@import "hr-icon.scss";
+
+/*
+Default elements
+
+This section describes the different elements that are used to build the App's interface.
+
+Styleguide 1.0
+*/
+@import "section-default";
+
+/*
+Navigation
+
+The navigation is important to the success of the user's experience of your application. <br />
+Using a consistent navigation scheme from page to page helps the user learn your application navigation system.
+
+Styleguide 2.0
+*/
+@import "section-navigation";
+
+/*
+Forms
+
+Forms and other dynamic elements.
+For more information, see <a href="http://getbootstrap.com/css/#forms">Bootstrap's documentation</a>.
+
+Styleguide 3.0
+*/
+@import "section-forms";
+
+/*
+Components
+
+Directly usable components, to enhance display of your pages.<br />
+For more information, see <a href="http://getbootstrap.com/components">Bootstrap's documentation</a>.
+
+Styleguide 4.0
+*/
+@import "section-components";
+
+/*
+Media
+
+Graphical elements, related to pictures, videos, etc.
+
+Styleguide 5.0
+*/
+@import "section-media";
+
+/*
+Templates
+
+Some predefined templates that can be used directly for your application.
+
+Styleguide 6.0
+*/
+@import "section-page";
+
+/*
+Sitemap
+
+Styleguide sitemap
+*/ 
+
+/*
+Contact
+
+Styleguide contact
+*/
+
+/*
+Helpers
+It has to be added at the end to prevent overlap.
+*/
+.bg-success { 
+	background-color: $state-success-bg;
+	color: #212121; 
+}
+
+.bg-success-dark { 
+	background-color: $btn-success-bg;
+	color: $btn-success-color; 
+}
+
+.bg-info { 
+	background-color: $state-info-bg;
+	color: #212121; 
+}
+
+.bg-info-dark { 
+	background-color: $btn-info-bg;
+	color: $btn-info-color; 
+}
+
+.bg-warning { 
+	background-color: $state-warning-bg;
+	color: #212121; 
+}
+
+.bg-warning-dark { 
+	background-color: $btn-warning-bg;
+	color: $btn-warning-color; 
+}
+
+.bg-danger { 
+	background-color: $state-danger-bg;
+	color: #212121; 
+}
+
+.bg-danger-dark { 
+	background-color: $btn-danger-bg;
+	color: $btn-danger-color; 
+}
+
+.bg-transparent { 
+	background-color: transparent; 
+}
+
+.bg-white { 
+	background-color: #fff;
+	color: $grey-900; 
+}
+
+.bg-dark { 
+	background-color: $grey-800;
+	color: #fff; 
+}
+
+
+.bg-alt-blue { 
+	background-color: #0C4DA2;
+	color: #fff; 
+}
+
+.bg-alt-cyan { 
+	background-color: $cyan-700;
+	color: $cyan-700-text; 
+}
+
+.bg-alt-orange { 
+	background-color: $orange-800;
+	color: $orange-800-text; 
+}
+
+.bg-alt-purple { 
+	background-color: $purple-600;
+	color: $purple-600-text; 
+}
+
+.bg-alt-green { 
+	background-color: $light-green-800;
+	color: $light-green-800-text; 
+}
+
+.bg-alt-pink { 
+	background-color: $pink-700;
+	color: $pink-700-text; 
+}
+
+.bg-alt-grey { 
+	background-color: $grey-800;
+	color: $grey-800-text; 
+}
+
+.bg-alt-yellow { 
+	background-color: $amber-400;
+	color: $amber-400-text; 
+}
+
+.bg-alt-red { 
+	background-color: $red-A700;
+	color: $red-A700-text; 
+}
+
+.bg-alt-lime { 
+	background-color: $lime-800;
+	color: $lime-800-text; 
+}
+
+.bg-alt-teal { 
+	background-color: $teal-600;
+	color: $teal-600-text; 
+}
+
+.bg-alt-blue-grey { 
+	background-color: $blue-grey-700;
+	color: $blue-grey-700-text; 
+}
+
+.bg-alt-brown { 
+	background-color: $brown-600;
+	color: $brown-600-text; 
+}
+
+.bg-alt-light-green { 
+	background-color: $green-400;
+	color: $green-400-text; 
+}
+
+.bg-alt-light-blue { 
+	background-color: $light-blue-100;
+	color: $light-blue-100-text; 
+}
+
+.bg-alt-light-red { 
+	background-color: $red-400;
+	color: $red-400-text; 
+}
+
+
+.bg-theme-primary-dark { 
+	background-color: $theme-primary-dark;
+	color: $theme-primary-dark-text; 
+}
+
+.bg-theme-primary { 
+	background-color: $theme-primary;
+	color: $theme-primary-text; 
+}
+
+.bg-theme-secondary { 
+	background-color: $theme-secondary;
+	color: $theme-secondary-text; 
+}
+
+.bg-theme-accent { 
+	background-color: $theme-accent;
+	color: $theme-accent-text; 
+}
+
+.bg-theme-light { 
+	background-color: $theme-light;
+	color: $theme-light-text; 
+}
+
+.bg-theme-background { 
+	background-color: $theme-background;
+	color: $theme-background-text; 
+}
+
+
+.text-muted { 
+	color: $text-muted; 
+}
+
+.text-success { 
+	color: $state-success-text; 
+}
+
+.text-info { 
+	color: $state-info-text; 
+}
+
+.text-warning { 
+	color: $state-warning-text; 
+}
+
+.text-danger { 
+	color: $state-danger-text; 
+}
+
+.text-white { 
+	color: #fff; 
+}
+
+
+.text-theme-primary-dark { 
+	color: $theme-primary-dark; 
+}
+
+.text-theme-primary { 
+	color: $theme-primary; 
+}
+
+.text-theme-secondary { 
+	color: $theme-secondary; 
+}
+
+.text-theme-accent { 
+	color: $theme-accent; 
+}
+
+.text-theme-background { 
+	color: $theme-background; 
+}
+

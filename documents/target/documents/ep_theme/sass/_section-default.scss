@@ -1,0 +1,1207 @@
+/* ------- Default elements section ------- */
+
+/*
+Page structure
+
+Here you can find how the page is structured and the elements used in each region.<br />
+To get a directly usable page with all these elements, check the <a href="../project/example/skeleton.html">Skeleton page</a>.
+<div class="alert alert-warning no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__exclamation-triangle hr-icon-38 text-warning"></span>
+  </div>
+  <div class="alert-body">
+    <strong>To developers</strong><br />
+    If you need a component or page that is not yet in the Styleguide, <a href="section-contact.html" class="alert-link">please ask us</a>.<br />
+    Also, be sure to check the <a class="alert-link" data-toggle="modal" data-target="#mandatory-checklist"><span class="hr-icon__check-square-o"></span> <strong>Mandatory items cheklist</strong></a>
+  </div>
+</div>
+<div class="modal fade" id="mandatory-checklist" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-warning">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="modal-title text-lg" id="popupInfoLabel"><span class="hr-icon__check-square-o hr-icon-20 text-warning"></span> Mandatory items cheklist</div>
+      </div>
+      <div class="modal-body">
+        <p>
+          Most of the components in this Styleguide are provided as examples to help you build your application and others as following are mandatory.<br />
+          Please strictly follow the recommendations of the Styleguide.<br />
+          For any question, do not hesitate to <a href="section-contact.html">contact us</a>.
+        </p>
+
+        <ul class="list list-striped list-unstyled">
+          <li><strong>Font & colors hierarchy</strong><br />Use colors and font sizes properly, please follow the Styleguide and keep it simple.</li>
+          <li><strong>Header</strong><br />The header should be displayed on every page.</li>
+          <li><strong>Footer</strong><br />The footer should be displayed on every page.</li>
+          <li><strong>Compatibilty</strong><br />Application should be fully usable on Internet Explorer, and preferably on Firefox too.</li>
+          <li><strong>Responsive UI</strong><br />Apply a responsive web design to your application to make it usable on any devices (desktop, tablet, smartphone, ...).</li>
+          <li><strong>Language</strong><br />Application should be available in French and English.</li>
+          <li><strong>Tools</strong><br />Search, Help, and Settings should be used as default tools for all applications.</li>
+          <li><strong>Alternative text</strong><br />Give description to pictures and icons to allow a better navigation to users.</li>
+          <li><strong>Action feedback</strong><br />Give immediate and clear feedback of user's actions (successful and failed) (i.e. Submit = Your request was sent successfully).</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide 1.1
+*/
+
+/*
+Grid layout
+
+HR Apps Styleguide is based on Bootstrap, and so includes a responsive, mobile first fluid grid system that appropriately scales up to 12 columns as the device or viewport size increases.<br />
+It uses predefined classes for easy layout options. For more info about Grid System please visit <a href="http://getbootstrap.com/css/#grid">Bootstrap's documentation</a>.
+
+Markup: ../../markup/grid.html
+
+Styleguide 1.1.1
+*/
+
+/*
+Regions
+
+Here are the main regions that are used on HR Apps.
+
+Markup: ../../markup/layout-regions.html
+
+Styleguide 1.1.2
+*/
+/*html,
+body {
+  height: 100%;
+}*/
+html {
+  min-height: 100%;
+}
+
+body {
+  background-image: url('../../images/background/pattern-default.png'), linear-gradient(to bottom, $grey-50 0%, $grey-200 100%); 
+  background-repeat: repeat, repeat-x;
+}
+
+/*
+Header
+
+Header has to be displayed on every page. It represents the application's identity.<br />
+Header section is <strong class="text-danger">mandatory</strong> and should contain the following elements:<br />
+<ul class="list">
+  <li>Logo and application name</li>
+  <li>Help button</li>
+  <li>User profile button</li>
+  <li><a href="section-2.html#kssref-2-1">Main navigation bar</a></li>
+  <li>User name and position</li>
+</ul>
+Following elements are <strong class="text-info">optional</strong>, but should be displayed as below if used by the application:
+<ul class="list">
+  <li>Search button</li>
+  <li>Alerts button</li>
+</ul>
+
+Markup: ../../markup/layout-header.html
+
+Styleguide 1.1.3
+*/
+.banner {
+  height: 60px;
+  @include gradient-vertical(darken($theme-background, 5%), $theme-background, 0%, 40%);
+
+  &.affix {
+    position: relative;
+    padding-bottom: 120px;
+  }
+}
+
+.banner__logo {
+  display: inline-block;
+  height: 60px;
+
+  a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:focus {
+      background-color: $theme-accent;
+      outline: 0;
+    }
+  }
+}
+
+.banner__tools {
+  .btn-group:last-child {
+    .btn {
+      border-right: 1px solid #bdbdbd;
+    }
+  }
+}
+
+.banner__item {
+  vertical-align: top;
+
+  > .btn-link {
+    color: $grey-100;
+    height: $navbar-height;
+    width: 60px;
+    padding: 4px 0 0;
+    border-left: 1px solid #fff;
+    border-bottom: none;
+    border-top: none;
+    border-right: none;
+
+    &:hover,
+    &:focus {
+      background-color: $theme-accent;
+      color: $theme-accent-text;
+      outline: 0;
+    }
+  }
+
+  .dropdown-menu .btn-link {
+    color: $text-color;
+  }
+}
+
+@media screen and (min-width: $screen-md-min) {
+  .banner__item {
+    > .btn-link {
+      color: $grey-800;
+      height: 60px;
+      width: 70px;
+      padding: 8px 0 0;
+      border-left: 1px solid $grey-400;
+      border-bottom: none;
+      border-top: none;
+      border-right: none;
+
+      &:hover,
+      &:focus {
+        background-color: $theme-accent;
+        color: $theme-accent-text;
+        outline: 0;
+      }
+    }
+  }
+}
+
+.banner__desc {
+  margin-top: 6px;
+}
+
+.banner__search {
+  overflow: hidden;
+
+  &.is-opened {
+    overflow: visible;
+  }
+
+  > button {
+    z-index: 1003;
+  }
+
+  form {
+    background-color: $navbar-default-bg;
+    position: absolute;
+    right: 70px;
+    margin-top: 9px;
+    width: 70px;
+    z-index: 1002;
+    overflow: hidden;
+    input[type=search] {
+      border-radius: $border-radius-base 0 0 $border-radius-base !important;
+    }
+  }
+}
+
+@media screen and (min-width: $screen-md-min) {
+  .banner__search form {
+    background-color: transparent;
+    margin-top: 13px;
+  }
+}
+
+.banner__user {
+  &.is-logged {
+    color: $grey-800;
+    background-color: $state-success-bg;
+    border-left: 2px solid $state-success-border;
+    border-right: 1px solid $grey-400;
+  }
+}
+
+.notif-list__excerpt {
+  display: inline-block;
+	text-overflow: ellipsis;
+	width: 350px;
+	white-space: nowrap;
+	overflow: hidden;
+  vertical-align: top;
+}
+
+.notif-list__date {
+  display: inline-block;
+  @extend small;
+  color: $grey-500;
+  vertical-align: top;
+}
+
+.notif-list__close {
+  color: $grey-600;
+  margin-left: 5px;
+}
+
+/*
+Main content
+
+Main content area is displayed in a white box. It can be displayed in two sizes: centered on the screen, with margin on both sides, or with full width.<br />
+Use class "<em>container</em>" or "<em>container-fluid</em>" to use one display or the other. You can also force a specific display by adding class "<em>locked</em>" (see examples below). In any case, make sure to add class "<em>layoutSize</em>", as it is done on the <a href="../project/example/skeleton.html">Skeleton page</a>.<br />
+<br />
+Global alert messages should be displayed on top of the main content section, before the breadcrumb.<br />
+<br />
+Main content section is <strong class="text-danger">mandatory</strong>.
+
+Markup: ../../markup/layout-main.html
+
+Styleguide 1.1.4
+*/
+.box {
+  background-color: #fff;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.13);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+#layout-main {
+  padding-top: 15px;
+  margin-bottom: 30px;
+  position: relative;
+  
+  &:focus { 
+  	outline: none; 
+  }
+  
+  > .container,
+  > .container-fluid,
+  .box-wrapper {
+    background-color: $theme-background;
+    margin-top: -15px;
+    padding: 15px;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+  }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+	#layout-main {
+		> .container-fluid {
+	    padding-left: 30px;
+	    padding-right: 30px;
+	  }	
+	}
+	
+}
+
+/*
+Sidebar
+
+Sidebar could be used to display additional information (related to the content or not), extra navigation, calendar, etc.<br />
+It should be located on the right.<br />
+You can place any component in it (panels, list groups, forms, etc.).<br />
+Sidebar section is <strong class="text-info">optional</strong>
+
+Markup: ../../markup/layout-sidebar.html
+
+Styleguide 1.1.5
+*/
+
+/*
+Settings menu
+
+This collapsible menu regroups every customization option provided to users (colors, fonts, screen width, etc.).<br />
+Settings menu is <strong class="text-danger">mandatory</strong> and should contain following elements:
+<ul class="list"><li>Tools</li><li>Language</li><li>Zoom</li><li>Layout</li><li>Theme</li><li>Pattern</li></ul>
+To add this menu to your pages, just copy paste corresponding code after the footer.
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Placeholders</strong><br />
+    Several placeholders are used to simplify code and updates. Just have a look at code example below.<br />
+    If you need to use custom code for a specific tool, just write it instead of the placeholder.
+  </div>
+</div>
+
+Markup: ../../markup/layout-settings-menu.html
+
+Styleguide 1.1.6
+*/
+#layout-settings-menu {
+  position: fixed;
+  left: 0;
+  top: 140px;
+  z-index: 999;
+}
+
+.settings-menu-btn,
+.settings-menu-btn:hover,
+.settings-menu-btn:focus {
+  background-color: #fff;
+  border: 1px solid $grey-400;
+  border-left-width: 0;
+  margin-left: -1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 10px 1px 7px;
+}
+
+.settings-menu-box {
+  width: 220px;
+  padding: 15px;
+  margin-left: -220px;
+  background-color: #fff;
+  border: 1px solid $grey-400;
+  border-left-width: 0;
+  border-bottom-right-radius: 10px;
+  transition: margin 0.25s ease 0s;
+
+  &.open {
+    margin-left: 0;
+    transition: margin 0.25s ease 0s;
+  }
+}
+
+.theme-switcher__color,
+.pattern-switcher__color {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  border: 1px solid rgba(0,0,0,0.4);
+}
+
+.active .theme-switcher__color,
+.active .pattern-switcher__color {
+  border-color: $grey-900;
+  border-width: 3px;
+}
+
+.theme-switcher__default .theme-switcher__color { 
+  background-color: $light-blue-600; 
+}
+
+.theme-switcher__green .theme-switcher__color { 
+  background-color: $green-A700; 
+}
+
+.theme-switcher__lime .theme-switcher__color { 
+  background-color: $lime-500; 
+}
+
+.theme-switcher__corail .theme-switcher__color { 
+  background-color: $red-A200; 
+}
+
+.theme-switcher__orange .theme-switcher__color { 
+  background-color: $orange-A400; 
+}
+
+.theme-switcher__pink .theme-switcher__color { 
+  background-color: $pink-400; 
+}
+
+.theme-switcher__purple .theme-switcher__color { 
+  background-color: $purple-400; 
+}
+
+.theme-switcher__cyan .theme-switcher__color { 
+  background-color: $cyan-A400; 
+}
+
+.theme-switcher__teal .theme-switcher__color { 
+  background-color: $teal-A400; 
+}
+
+.theme-switcher__brown .theme-switcher__color { 
+  background-color: $brown-400; 
+}
+
+.theme-switcher__grey .theme-switcher__color { 
+  background-color: $blue-grey-500; 
+}
+
+
+.theme-switcher__high-contrast .theme-switcher__icon { 
+  position: absolute !important; 
+  top: 12px !important; 
+  left: 8px !important; 
+  color: $yellow-100 !important; 
+}
+
+.theme-switcher__high-contrast .theme-switcher__color { 
+  background-color: $blue-900; 
+  display: inline-block; 
+  vertical-align: middle; 
+}
+
+.hr-pattern-default  { background-image: linear-gradient(to bottom, $grey-50 0%, $grey-200 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern1 { background-image: url('../../images/background/pattern-1.png'), linear-gradient(to bottom, $grey-50 0%, $grey-200 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern2 { background-image: url('../../images/background/pattern-2.png'), linear-gradient(to bottom, $grey-50 0%, $grey-200 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern3 { background-image: url('../../images/background/pattern-3.png'), linear-gradient(to bottom, $grey-50 0%, $grey-200 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern4 { background-image: url('../../images/background/pattern-4.png'), linear-gradient(to bottom, $grey-50 0%, $grey-200 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern5 { background-image: url('../../images/background/pattern-default.png'), linear-gradient(to bottom, $grey-800 0%, $grey-900 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern6 { background-image: url('../../images/background/pattern-5.png'), linear-gradient(to bottom, $grey-50 0%, $grey-200 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern7 { background-image: url('../../images/background/pattern-6.png'), linear-gradient(to bottom, $grey-800 0%, $grey-900 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern8 { background-image: url('../../images/background/pattern-7.png'), linear-gradient(to bottom, $grey-800 0%, $grey-900 100%); background-repeat: repeat, repeat-x;}
+.hr-pattern-pattern9 { background-image: url('../../images/background/pattern-4.png'), linear-gradient(to bottom, $grey-800 0%, $grey-900 100%); background-repeat: repeat, repeat-x;}
+
+/*
+Footer
+
+Footer has to be displayed on every page.<br />
+Footer section is <strong class="text-danger">mandatory</strong> and should contain the following elements:
+<ul class="list">
+<li>Application name</li>
+<li>Current version, with a link to a release note page</li>
+</ul>
+
+Markup: ../../markup/layout-footer.html
+
+Styleguide 1.1.7
+*/
+.footer {
+  text-align: center;
+  background-color: $footer-bg;
+  color: $footer-color;
+  border-top: 4px solid $theme-secondary;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 990;
+}
+
+/*
+Layout Helpers
+
+If needed, you can manage padding, margin and borders of every element by using a set of css classes.
+
+Styleguide 1.1.8
+*/
+
+/*
+Margin helpers
+
+Use following classes to manage margin:
+<dl class="dl-horizontal">
+  <dt>Set margin to 0</dt>
+  <dd><em>"no-margin"</em> (or <em>"no-margin-top"</em>, <em>"no-margin-right"</em>, <em>"no-margin-bottom"</em>, <em>"no-margin-left"</em>)</dd>
+  <dt>Set margin to 15px</dt>
+  <dd><em>"add-margin"</em> (or <em>"add-margin-top"</em>, <em>"add-margin-right"</em>, <em>"add-margin-bottom"</em>, <em>"add-margin-left"</em>)</dd>
+  <dt>Set margin to -15px</dt>
+  <dd><em>"remove-margin"</em> (or <em>"remove-margin-top"</em>, <em>"remove-margin-right"</em>, <em>"remove-margin-bottom"</em>, <em>"remove-margin-left"</em>)</dd>
+</dl>
+
+Styleguide 1.1.8.1
+*/
+.no-margin-top { margin-top: 0 !important; }
+.no-margin-bottom { margin-bottom: 0 !important; }
+.no-margin-right { margin-right: 0 !important; }
+.no-margin-left { margin-left: 0 !important; }
+.no-margin { @extend .no-margin-top; @extend .no-margin-right; @extend .no-margin-bottom; @extend .no-margin-left;}
+
+.add-margin-top { margin-top: 15px !important; }
+.add-margin-bottom { margin-bottom: 15px !important; }
+.add-margin-right { margin-right: 15px !important; }
+.add-margin-left { margin-left: 15px !important; }
+.add-margin { @extend .add-margin-top; @extend .add-margin-right; @extend .add-margin-bottom; @extend .add-margin-left;}
+
+.remove-margin-top { margin-top: -15px !important; }
+.remove-margin-bottom { margin-bottom: -15px !important; }
+.remove-margin-right { margin-right: -15px !important; }
+.remove-margin-left { margin-left: -15px !important; }
+.remove-margin { @extend .remove-margin-top; @extend .remove-margin-right; @extend .remove-margin-bottom; @extend .remove-margin-left;}
+
+/*
+Padding helpers
+
+Use following classes to manage padding:
+<dl class="dl-horizontal">
+  <dt>Set padding to 0</dt>
+  <dd><em>"no-padding"</em> (or <em>"no-padding-top"</em>, <em>"no-padding-right"</em>, <em>"no-padding-bottom"</em>, <em>"no-padding-left"</em>)</dd>
+  <dt>Set padding to 15px</dt>
+  <dd><em>"add-padding"</em> (or <em>"add-padding-top"</em>, <em>"add-padding-right"</em>, <em>"add-padding-bottom"</em>, <em>"add-padding-left"</em>)</dd>
+</dl>
+
+Styleguide 1.1.8.2
+*/
+.no-padding-top { padding-top: 0 !important; }
+.no-padding-bottom { padding-bottom: 0 !important; }
+.no-padding-right { padding-right: 0 !important; }
+.no-padding-left { padding-left: 0 !important; }
+.no-padding { @extend .no-padding-top; @extend .no-padding-right; @extend .no-padding-bottom; @extend .no-padding-left;}
+
+.add-padding-top { padding-top: 15px !important; }
+.add-padding-bottom { padding-bottom: 15px !important; }
+.add-padding-right { padding-right: 15px !important; }
+.add-padding-left { padding-left: 15px !important; }
+.add-padding { @extend .add-padding-top; @extend .add-padding-right; @extend .add-padding-bottom; @extend .add-padding-left;}
+
+/*
+Border helpers
+
+Use following classes to manage border:
+<dl class="dl-horizontal">
+  <dt>Remove border</dt>
+  <dd><em>"no-border"</em> (or <em>"no-border-top"</em>, <em>"no-border-right"</em>, <em>"no-border-bottom"</em>, <em>"no-border-left"</em>)</dd>
+</dl>
+
+Styleguide 1.1.8.3
+*/
+.no-border-top { border-top: none !important; }
+.no-border-bottom { border-bottom: none !important; }
+.no-border-right { border-right: none !important; }
+.no-border-left { border-left: none !important; }
+.no-border { @extend .no-border-top; @extend .no-border-right; @extend .no-border-bottom; @extend .no-border-left;}
+
+/*
+Colors
+
+Colors used on HR Apps Styleguide comprise primary and accent colors that should be used for every HR application. They've been designed to work harmoniously with each other.
+
+Styleguide 1.2
+*/
+
+/*
+Theme color palette
+
+We propose 10 different theme colors picked up from <a href="https://www.google.com/design/spec/style/color.html#color-color-palette">Goolgle colors</a>. They are offered to the user as customization options.<br />
+If you use a custom CSS file for your application, make sure that it is displayed correctly with each theme.<br />
+The blue one is the default color that is displayed when the application is used for the first time and until the user selects another one. To see the other colors offered, please change the theme color in the Settings menu and the colors reference will be provided.<br />
+This customization option is saved in a cookie.
+
+Markup: ../../markup/color-palette.html
+
+Styleguide 1.2.1
+*/
+
+/*
+Default colors helpers
+
+By adding these CSS classes you can style your application directly.<br />
+
+Markup: ../../markup/color-default.html
+
+Styleguide 1.2.2
+*/
+
+/*
+Theme colors helpers
+
+If you want to use the colors palette corresponding to the currently selected theme, use the following CSS classes.
+
+Markup: ../../markup/color-dynamic.html
+
+Styleguide 1.2.3
+*/
+
+/*
+Alternative colors
+
+These colors should be used only when there is a need of more colors (for instance for charts, timeline, etc.).<br />
+It is not intended to be used for default elements or styleguide components.<br />
+Class helpers are provided for these colors too.
+
+Markup: ../../markup/color-alternative.html
+
+Styleguide 1.2.4
+*/
+
+/*
+Striped background
+
+Add class "<em>bg-striped</em>" to add a striped effect on any color.<br />
+On light background color, you may use class "<em>bg-striped-inverted</em>" instead.
+
+Markup: ../../markup/color-strip.html
+
+Styleguide 1.2.5
+*/
+.bg-striped {
+  background-image: linear-gradient(45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    rgba(0, 0, 0, 0) 25%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    rgba(0, 0, 0, 0) 75%,
+    rgba(0, 0, 0, 0));
+  background-size: 25px 25px;
+}
+
+.bg-striped-inverted {
+  background-image: linear-gradient(45deg,
+    rgba(0, 0, 0, 0.15) 25%,
+    rgba(255, 255, 255, 0) 25%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 0.15) 50%,
+    rgba(0, 0, 0, 0.15) 75%,
+    rgba(255, 255, 255, 0) 75%,
+    rgba(255, 255, 255, 0));
+  background-size: 25px 25px;
+}
+
+/*
+Typography
+
+Different styles of text are already set. Please follow the style defined.<br />
+We choose to use <a href="https://fonts.google.com/specimen/Open+Sans">Open Sans font</a> and its different variants for its readability on the screen.<br />
+For more information, see <a href="http://getbootstrap.com/css/#type">Bootstrap's documentation</a>.
+
+Styleguide 1.3
+*/
+
+/*
+Body and links
+
+Default text font used for paragraph and links is <strong>Open Sans, 14px, #212121</strong><br />
+Different font weights are available.
+
+Markup: ../../markup/text.html
+
+Styleguide 1.3.1
+*/
+.text-weight-300 { font-weight: 300; }
+.text-weight-500 { font-weight: 500; }
+.text-weight-600 { font-weight: 600; }
+.text-weight-700 { font-weight: 700; }
+.text-weight-800 { font-weight: 800; }
+.link-inverted {
+	color: #fff;
+	text-decoration: underline;
+
+	&:hover {
+		color: $grey-50;
+	}
+}
+
+.link-no-color {
+  color: $text-color;
+}
+
+.lead {
+	font-size: 17px;
+  font-weight: 400;
+}
+
+/*
+Headings
+
+There are six different levels of headings, each with its own style for structuring the page and better distinguishing the different sections.
+
+Markup: ../../markup/headings.html
+
+Styleguide 1.3.2
+*/
+h1 {
+  font-size: 2.5rem;
+	color: $theme-primary-dark;
+	font-weight: 600;
+	margin: 0 0 2.3rem;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  border-bottom: 1px solid $theme-primary-dark;
+}
+
+.page-header {
+	margin: 20px 0 20px;
+	border-bottom: none;
+	display: block;
+
+	h1 {
+		color: $theme-background-text;
+		margin: 0;
+		opacity: 0.8;
+		font-weight: 700;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-bottom: none;
+
+		small {
+			color: $theme-background-text;
+			opacity: 0.7;
+			text-transform: none;
+			font-weight: 400;
+		}
+	}
+
+	h2 {
+		color: $theme-background-text;
+		border-bottom: none;
+		opacity: 0.8;
+
+		small {
+			color: $theme-background-text;
+			opacity: 0.6;
+		}
+	}
+}
+
+h2 {
+  font-size: 2.3rem;
+	color: $theme-secondary;
+	font-weight: 600;
+	margin: 1.8rem 0 1.6rem 0;
+}
+
+h3 {
+  font-size: 1.9rem;
+	color: $theme-primary-dark;
+	font-weight: 600;
+	margin: 1.4rem 0 1.2rem 0;
+}
+
+h4 {
+  font-size: 1.6rem;
+	color: $text-color;
+	font-weight: 600;
+	margin: 1.2rem 0 1rem 0;
+}
+
+h5 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+	color: $theme-secondary;
+	font-weight: 600;
+	margin: 1.2rem 0 1rem 0;
+}
+
+h6 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+	color: $theme-primary-dark;
+	font-weight: 600;
+	margin: 1.2rem 0 1rem 0;
+}
+
+/*
+Text size
+
+To have larger text, you can use the following classes.<br />
+To have smaller text, use <em>"small"</em> class, or the standard &lt;small&gt; tag.
+
+Markup: ../../markup/text-size.html
+
+text-xl - Very large text
+text-lg - Large text
+text-md - Medium text
+. - Default text
+small - Small text
+
+Styleguide 1.3.3
+*/
+.text-xl { font-size: 2em; }
+.text-lg { font-size: 1.6em; }
+.text-md { font-size: 1.2em; }
+
+/*
+Small caps
+
+By using the <em>"text-small-caps"</em> class, you can alter the display of text.
+
+Markup: ../../markup/text-small-caps.html
+
+Styleguide 1.3.4
+*/
+.text-small-caps {
+	font-weight: 600;
+	font-size: 0.8em;
+	text-transform: uppercase;
+}
+
+/*
+Blockquote
+
+To display a quote or highlight a specific paragraph
+
+Markup: ../../markup/quotes.html
+
+Styleguide 1.3.5
+*/
+
+/*
+Text highlight
+
+To highlight a block of text. It is intended to be used inside a "box" container.<br />
+It should not replace standard text hierarchy (h1 to h6).
+
+Markup: ../../markup/text-highlight.html
+
+Styleguide 1.3.6
+*/
+.text-highlight {
+  background-color: $grey-800;
+  color: #fff;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 8px 15px;
+  margin-bottom: 5px;
+}
+
+/*
+Technical blocks
+
+To display blocks of technical information, you can use &lt;code&gt; or &lt;kbd&gt; tags.
+
+Markup: ../../markup/technical-blocks.html
+
+Styleguide 1.3.7
+*/
+kbd {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+/*
+Abbreviation and inline help
+
+Use "&lt;abbr&gt;" tag to specify that a piece of text has an inline help.
+
+Markup: ../../markup/abbreviation.html
+
+Styleguide 1.3.8
+*/
+abbr[title],
+abbr[data-original-title] {
+  text-decoration: none;
+}
+
+/*
+Wells
+
+Use class "<em>well</em>" to set a background for a specific area.<br />
+Different sizes and display are available.
+
+Markup: ../../markup/well.html
+
+well-lg - Large well
+. - Default well
+well-sm - Small well
+well-light - Well without borders
+
+Styleguide 1.3.9
+*/
+.well {
+  border-radius: 0;
+}
+.well-light {
+  border: none;
+  box-shadow: none;
+}
+
+/*
+Description
+
+For a description that is associated to a list of terms, two types of display are available (vertical or horizontal).<br />
+You can also add class <em>"dl-light"</em> to &lt;dl&gt; to use normal font instead of bold.
+
+Markup: ../../markup/description.html
+
+Styleguide 1.4
+*/
+dt {
+  font-weight: 600;
+}
+
+dl {
+  word-wrap: break-word;
+}
+
+dl.dl-light dt {
+	font-weight: normal;
+}
+
+.dl-vertical dt {
+	margin-top: 4px;
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.dl-horizontal dd {
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: $screen-sm-min) {
+  .dl-horizontal dd {
+  	margin-top: 2px;
+  	margin-bottom: 2px;
+  }
+  .dl-horizontal dt {
+  	margin-bottom: 2px;
+  }
+}
+
+/*
+Description size
+
+When using horizontal description, you can change the width of the first column.
+
+Markup: ../../markup/description-size.html
+
+dl-xs - Very small
+dl-sm - Small
+. - Default
+dl-lg - Large
+dl-xl - Very large
+
+Styleguide 1.4.1
+*/
+@media screen and (min-width: $screen-sm-min) {
+	.dl-xs dt { width: 30px; }
+	.dl-xs dd { margin-left: 50px; }
+	.dl-sm dt { width: 100px; }
+	.dl-sm dd { margin-left: 120px; }
+	.dl-lg dt { width: 220px; }
+	.dl-lg dd { margin-left: 240px; }
+	.dl-xl dt { width: 300px; }
+	.dl-xl dd { margin-left: 320px; }
+}
+
+/*
+Description wrap
+
+By default, text is truncated in horizontal description items. If you want it to wrap on multiple lines, use the <em>"dl-wrap"</em> class.
+
+Markup: ../../markup/description-wrap.html
+
+Styleguide 1.4.2
+*/
+.dl-horizontal.dl-wrap dt {
+	white-space: normal;
+	overflow: visible;
+}
+
+/*
+Inverted description
+
+To inverse text weight (bold and normal) between description label and value, add the <em>"dl-inverted"</em> class.
+
+Markup: ../../markup/description-inverted.html
+
+Styleguide 1.4.3
+*/
+.dl-inverted {
+  dd { font-weight: 600; }
+  dt { font-weight: 500; }
+}
+
+/*
+Lists
+
+A list of items. It could be ordered or not.
+
+Markup: ../../markup/lists.html
+
+Styleguide 1.5
+*/
+
+ul, ol {
+  padding-left: 20px;
+}
+
+.list li {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+ol.list {
+  counter-reset: item;
+  padding-left: 9px;
+
+  li {
+    display: block;
+
+    &:before {
+      content: counters(item, ".") " "; counter-increment: item
+    }
+  }
+
+  ol {
+    padding-left: 15px;
+  }
+}
+
+ul.list li {
+  list-style: none;
+}
+
+ul.list li:before {
+  content: '\2022';
+  display: block;
+  position: relative;
+  max-width: 0;
+  max-height: 0;
+  left: -12px;
+  top: -4px;
+  color: $theme-primary-dark;
+  font-size: 20px;
+}
+
+ul.list li li:before {
+	color: $theme-secondary;
+}
+
+.list.list-unstyled li:before {
+  display: none;
+}
+
+.list-striped > li {
+  padding: 4px;
+
+  &:nth-of-type(2n+1) {
+    background-color: $table-bg-accent;
+    border-top: 1px solid $table-border-color;
+    border-bottom: 1px solid $table-border-color;
+  }
+}
+
+/*
+Tables
+
+To display data in a table.
+
+Markup: ../../markup/tables.html
+
+Styleguide 1.6
+*/
+.table-hover > tbody > tr:hover {
+	color: $table-color-hover;
+}
+
+/*
+Logo
+
+All HR applications have to follow the same graphical chart as defined: "EP logo + application name".<br />
+The HR App logo is following the <a href="http://www.epintranet.ep.parl.union.eu/files/live/sites/refin/files/shared/publishing/charte_graphique_pe/new_logo_2015/ep_logo_guidelines_041115.pdf">EP Logo Guidelines</a>.<br />
+Here is an example:<br />
+<img src="../project/images/header/header_hr-apps.png" alt="Logo of HR Apps Styleguide" />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Logo creation</strong><br />
+    Specific logo for each HR application will be provided by the Communication team.<br />
+    Please do not create your own one and do not modify an existing one. For any logo request, <a href="section-contact.html">please ask us</a>.
+  </div>
+</div>
+
+Styleguide 1.7
+*/
+
+/*
+Divider
+
+Displays an horizontal divider to mark different sections.<br />
+Different sizes are available.
+
+Markup: ../../markup/divider.html
+
+.hr-sm - Small divider
+. - Default
+.hr-lg - Large divider
+
+Styleguide 1.8
+*/
+.hr-sm {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.hr-lg {
+  border-bottom: 1px solid $grey-200;
+}
+
+/*
+Environment type
+
+Displays the environment mention "DEV" for Development and "PREPROD" for Pre-production (nothing is displayed on Production) to clarify the environment currently in use and prevent errors. It is displayed in the vertical bar on the left side.<br />
+It is managed automatically with javascript, so you don't need to add anything in your code.<br />
+<ul class="list">
+<li>"TEST" is displayed if domain contains <em>eicixzi</em></li>
+<li>"PREPROD" is displayed if domain contains <em>eicixzq</em> or <em>pp.ep</em></li>
+<li>"DEV" is displayed if domain contains something else than <em>eicixzp</em></li>
+</ul>
+
+Markup: ../../markup/environment.html
+
+Styleguide 1.9
+*/
+.environment-display {
+  position: fixed;
+  top: 0;
+  width: 15px;
+  height: 100%;
+  z-index: 1;
+}
+
+.environment-name {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.environment-dv {
+  background-color: $yellow-600;
+  color: $grey-900;
+}
+
+.environment-pp {
+  background-color: $red-600;
+  color: #fff;
+}
+
+.environment-test {
+  background-color: $orange-800;
+  color: $orange-800-text; 
+}
+
+/*
+Back on top button
+
+Provides a button to scroll screen back to the top of the page. It is very useful for users, especially on very long pages.<br />
+That button is included automatically with javascript so there is no code to add.
+
+Styleguide 1.10
+*/
+.btn-back-top {
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+  display: none;
+  opacity: 0.5;
+  background-color: $grey-800;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 2em;
+  border-radius: 4px;
+  padding: 4px 10px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  z-index: 10;
+  
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
+}

@@ -1,0 +1,569 @@
+/* ------- Forms section ------- */
+
+/*
+Basic form elements
+
+Basic form elements are standard components that are used on most forms.
+
+According to WCAG recommandations for accessibility, <a href="https://www.w3.org/TR/WCAG20-TECHS/H44.html">every form element should have a related label</a> using the <code>for</code> attribute.
+
+Styleguide 3.1
+*/
+
+/*
+Inputs
+
+Most common form control, text-based input fields.<br />
+Different states for form validation are available. Alternative text for screen readers is added automatically to display type of field.<br />
+You can set width of fields by using the <a href="section-1.html#kssref-1-1-1">grid system</a>.
+
+Markup: ../../markup/inputs.html
+
+Styleguide 3.1.1
+*/
+.has-success {
+  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
+}
+
+.has-warning {
+  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
+}
+
+.has-error {
+  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+}
+
+label {
+  font-weight: 600;
+}
+
+.mandatory-star {
+  color: $theme-primary-dark;
+}
+
+.form-control[readonly] {
+  background-color: #fff;
+}
+
+/*
+Static fields
+
+When you need to place plain text next to a form label within a form, use the "<em>form-control-static</em>" class on a "<em>&lt;p&gt;</em>"
+
+Markup: ../../markup/static-field.html
+
+Styleguide 3.1.2
+*/
+.form-control-static {
+  word-wrap: break-word;
+}
+
+/*
+Textareas
+
+Form control which supports multiple lines of text.<br />
+Form validation is also available (similar to text input).
+
+Markup: ../../markup/textareas.html
+
+Styleguide 3.1.3
+*/
+
+/*
+Selection lists
+
+Single or multiple selection lists.<br />
+Form validation is also available (similar to text input).
+
+Markup: ../../markup/select.html
+
+Styleguide 3.1.4
+*/
+select.form-control {
+  color: $grey-500;
+  padding-left: 8px;
+
+  option {
+    color: $text-color;
+  }
+
+  &.is-selected {
+    color: $text-color;
+  }
+}
+
+/*
+Checkboxes / radio
+
+Checkboxes are for selecting one or several options in a list, while radios are for selecting one option from many.<br />
+Form validation is also available (similar to text input).
+
+Markup: ../../markup/checkboxes-radio.html
+
+Styleguide 3.1.5
+*/
+
+/*
+Password
+
+Password fields automatically hide content of the field.<br />
+You can add a button to show/hide password at the end of the field (see example).
+
+Markup: ../../markup/password.html
+
+Styleguide 3.1.6
+*/
+::-ms-reveal {
+  display: none;
+}
+
+/*
+Upload fields
+
+Provides default display for upload forms.
+
+Markup: ../../markup/upload-fields.html
+
+Styleguide 3.1.7
+*/
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+/*
+Advanced form elements
+
+More advanced elements, used for specific cases.
+
+Styleguide 3.2
+*/
+
+/*
+Switcher
+
+Switcher are two states buttons, which can be set as on or off.<br />
+It may be used to give user possibility to enable/disable a feature, show/hide content, etc.<br />
+It is based on a standard checkbox, with custom display.
+
+Markup: ../../markup/switcher.html
+
+Styleguide 3.2.1
+*/
+
+.switcher {
+  .form-group {
+    display: block;
+
+    > div:first-child {
+      text-align: right;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  input[type="checkbox"]:checked + .switcher__btn::before {
+    background: inherit;
+    opacity: 0.55;
+  }
+  
+  input[type="checkbox"]:checked + .switcher__btn::after {
+    background: inherit;
+    left: 22px;
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.switcher__btn {
+  cursor: pointer;
+  height: 0px;
+  position: relative;
+  width: 44px;
+
+  &::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    content: '';
+    height: 12px;
+    margin-top: 4px;
+    position: absolute;
+    opacity: 0.2;
+    transition: all 0.4s ease-in-out;
+    width: 44px;
+  }
+
+  &::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    position: absolute;
+    top: -2px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+  }
+}
+
+/*
+Datepicker
+
+Provides out of the box date picker. It is based on Zebra datepicker (version 1.9.4).<br />
+Lots of customization options are available. See <a href="http://stefangabos.ro/jquery/zebra-datepicker/">online documentation</a> for more information.<br />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Zebra datepicker</strong><br />
+    To use datepickers in your page, make sure to include <strong>zebra_datepicker.js</strong> (commented by default in skeleton page).
+  </div>
+</div>
+
+Markup: ../../markup/datepicker.html
+
+Styleguide 3.2.2
+*/
+.Zebra_DatePicker_Icon_Wrapper {
+  > input {
+    padding-right: 30px;
+  }
+}
+
+.Zebra_DatePicker {
+  position: absolute;
+  background: #FFF;
+  border: 1px solid $grey-500;
+  z-index: 1200;
+  top: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.Zebra_DatePicker td,
+.Zebra_DatePicker th {
+  text-align: center;
+  padding: 5px 0
+}
+
+.Zebra_DatePicker td {
+  cursor: pointer
+}
+
+.Zebra_DatePicker .dp_daypicker th {
+  background-color: $grey-50;
+  color: $text-color;
+  border-bottom: 1px solid $grey-200;
+}
+
+.Zebra_DatePicker .dp_daypicker td,
+.Zebra_DatePicker .dp_daypicker th,
+.Zebra_DatePicker .dp_monthpicker td,
+.Zebra_DatePicker .dp_yearpicker td,
+.Zebra_DatePicker .dp_header .dp_previous,
+.Zebra_DatePicker .dp_header .dp_next {
+  width: 30px
+}
+
+.Zebra_DatePicker.dp_visible {
+  visibility: visible;
+  filter: alpha(opacity=100);
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out
+}
+
+.Zebra_DatePicker.dp_hidden {
+  visibility: hidden;
+  filter: alpha(opacity=0);
+  opacity: 0
+}
+
+.Zebra_DatePicker .dp_header .dp_caption {
+  font-weight: bold
+}
+
+.Zebra_DatePicker .dp_header .dp_hover {
+  background: $theme-accent;
+  color: $theme-accent-text;
+}
+
+.Zebra_DatePicker td.dp_not_in_month {
+  color: $grey-500;
+  cursor: default;
+}
+
+.Zebra_DatePicker td.dp_not_in_month_selectable {
+  color: $grey-500;
+}
+
+.Zebra_DatePicker td.dp_weekend {
+  color: $grey-700;
+  background-color: $grey-50;
+}
+
+.Zebra_DatePicker td.dp_weekend_disabled {
+  color: $grey-200;
+  cursor: default
+}
+
+.Zebra_DatePicker td.dp_selected {
+  background-color: $theme-primary;
+  color: $theme-primary-text !important
+}
+
+.Zebra_DatePicker td.dp_week_number {
+  cursor: text;
+  font-weight: bold
+}
+
+.Zebra_DatePicker .dp_monthpicker td {
+  width: 33%
+}
+
+.Zebra_DatePicker .dp_yearpicker td {
+  width: 33%
+}
+
+.Zebra_DatePicker .dp_header {
+  background-color: $theme-primary;
+  color: $theme-primary-text;
+  border-bottom: 1px solid $grey-500;
+}
+
+.Zebra_DatePicker .dp_footer {
+  background-color: $grey-50;
+  color: $text-color;
+  border-top: 1px solid $grey-500;
+}
+
+.Zebra_DatePicker td.dp_current { 
+  color: $theme-primary; 
+  font-weight: bold; 
+}
+
+.Zebra_DatePicker td.dp_disabled_current { 
+  color: $grey-500 
+}
+
+.Zebra_DatePicker td.dp_disabled { 
+  color: $grey-200; 
+  cursor: default;
+}
+
+.Zebra_DatePicker td.dp_hover { 
+  background: $theme-accent;
+  color: $theme-accent-text; 
+}
+
+button.Zebra_DatePicker_Icon { 
+  display: block; 
+  margin: 0 3px 0 3px; 
+  position: absolute; 
+  width: 22px; 
+  height: 24px; 
+  background: url('../../images/calendar.png') no-repeat left top; 
+  font-size: 1px; 
+  color: transparent; 
+  border: none; 
+  cursor: pointer; 
+  padding: 0; 
+  line-height: 0; 
+  vertical-align: top 
+}
+
+button.Zebra_DatePicker_Icon_Disabled { 
+  background-image: url('../../images/calendar_disabled.png') 
+}
+
+button.Zebra_DatePicker_Icon_Inside { 
+  margin: 0 3px 0 0; 
+  right: 0 !important; 
+  left: auto !important; 
+  top: 5px !important 
+}
+
+button.Zebra_DatePicker_Icon_Inside:focus,
+button.Zebra_DatePicker_Icon_Inside_Right:focus { 
+  outline: 1px dotted $grey-700; 
+}
+
+
+/*
+Characters counter
+
+<p>By adding "input-count" class to textarea or input field, you can automatically display the number of characters or words entered.<br />
+You can specify what data you want to display (characters, words and/or lines) by using "data-count" (see examples below).<br />
+Note that it is just for display, you still need to put a max lenght limit on the field if you wish to limit the input length.</p>
+<p>Counters are translated based on the <code>lang</code> attribute of the <code>html</code> element. <em>Only english and french available yet</em>.</p>
+
+Markup: ../../markup/characters-counter.html
+
+Styleguide 3.2.3
+*/
+
+/*
+Autocomplete and tagging
+
+Provides enhanced fields, integrating autocomplete, tagging, search, scroll, etc. It is based on <a href="https://select2.github.io/">Select2</a> (version 4.0.2).<br />
+Lots of customization options are available. See <a href="https://select2.github.io/options.html">online documentation</a> for more information.<br />
+<div class="alert alert-info" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Select2</strong><br />
+    To use autocomplete or tagging in your page, make sure to include <strong>select2.min.js</strong>, <strong>select2.min.css</strong> and <strong>select2-bootstrap.min.css</strong> (commented by default in skeleton page).<br />
+    For the multiple checkboxes, you have to add <strong>select2.multi-checkboxes.js</strong>
+  </div>
+</div>
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Select width</strong><br />
+    When using select2, if your &lt;select&gt; element is hidden by default (in a collapsed block for instance), you have to add <strong>style=width:"100%"</strong> to it or it won't be displayed correctly.
+  </div>
+</div>
+
+Styleguide 3.2.4
+*/
+select + .select2-container--bootstrap {
+  width: 100% !important;
+}
+.select2-container--bootstrap .select2-selection,
+.select2-container--bootstrap .select2-search--dropdown .select2-search__field {
+  font-family: 'Open sans', Arial;
+  color: $text-color;
+}
+
+.select2-container--bootstrap .select2-results__option[aria-selected=true] {
+  background-color: $grey-100;
+  color: $text-color;
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] {
+  background-color: $theme-accent;
+  color: $theme-accent-text;
+}
+
+.select2-container--bootstrap.select2-container--focus .select2-selection, .select2-container--bootstrap.select2-container--open .select2-selection {
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba($theme-primary, 0.6);
+  border-color: $theme-primary;
+}
+
+.select2-container--bootstrap .select2-dropdown {
+  border-color: $theme-primary;
+}
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+  background-color: $grey-100;
+}
+
+// Multiple checbkoxes
+.select2-type--checkboxes {
+  .select2-results__options {
+    .wrap {
+        position: relative;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          vertical-align: baseline;
+          width: 10px;
+          height: 10px;
+          border: 1px solid $grey-900;
+          margin-right: .25em;
+        }
+
+    }
+    
+    // Selected
+    [aria-selected="true"]{
+      .wrap {
+        &::after {
+          content: '\f00c';
+          font-family: 'hr-icon' !important;
+          speak: none;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+/*
+HTML autocomplete / tags
+
+Data entered as standard html select list.
+
+Markup: ../../markup/autocomplete-html.html
+
+Styleguide 3.2.4.1
+*/
+
+/*
+JSON autocomplete / tags
+
+Data entered as JSON object. It could be a local or a remote object.
+
+Markup: ../../markup/autocomplete-json.html
+
+Styleguide 3.2.4.2
+*/
+
+/*
+Other examples
+
+Some of the possibilities of the plugin.
+
+Markup: ../../markup/autocomplete-other.html
+
+Styleguide 3.2.4.3
+*/
+
+/*
+Form validation
+
+User should always receive feedback when doing an action (like submitting a form).<br />
+Use following elements to display input feedback (it is the same for all kind of form components).<br />
+Add icons to highlight field status when possible (ie. when form field isn't too small). This is particularly useful for colorblind people.
+
+Markup: ../../markup/form-validation.html
+
+Styleguide 3.4
+*/
+.form-control-feedback {
+  line-height: 34px;
+}

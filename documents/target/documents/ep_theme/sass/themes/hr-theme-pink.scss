@@ -1,0 +1,16 @@
+/* ------- Theme "Sweet" ------- */
+
+@import "../var-colors";
+
+$theme-primary-dark:  $pink-700;   $theme-primary-dark-text:   $pink-700-text;
+$theme-primary:       $pink-400;   $theme-primary-text:        $pink-500-text;
+$theme-secondary:     $grey-700;   $theme-secondary-text:      $grey-700-text;
+$theme-accent:        $pink-100;   $theme-accent-text:         $pink-100-text;
+$theme-background:    $grey-100;   $theme-background-text:     $grey-100-text;
+$theme-light:         $pink-50;    $theme-light-text:          $pink-50-text;
+
+$theme-text-color:    $grey-900;   $theme-link-color: $theme-primary-dark;   $theme-link-hover-color: $pink-900;
+$box-bg:              #fff;
+$gradient-body:       true;        $gradient-banner: true;
+
+@import "hr-theme";

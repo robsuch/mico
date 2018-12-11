@@ -1,0 +1,16 @@
+/* ------- Theme "Peace" ------- */
+
+@import "../var-colors";
+
+$theme-primary-dark:  $purple-600;   $theme-primary-dark-text:   $purple-600-text;
+$theme-primary:       $purple-400;   $theme-primary-text:        $purple-400-text;
+$theme-secondary:     $grey-700;     $theme-secondary-text:      $grey-700-text;
+$theme-accent:        $purple-100;   $theme-accent-text:         $purple-100-text;
+$theme-background:    $grey-100;     $theme-background-text:     $grey-100-text;
+$theme-light:         $purple-50;    $theme-light-text:          $purple-50-text;
+
+$theme-text-color:    $grey-900;      $theme-link-color: $theme-primary-dark;   $theme-link-hover-color: $purple-800;
+$box-bg:              #fff;
+$gradient-body:       true;           $gradient-banner: true;
+
+@import "hr-theme";

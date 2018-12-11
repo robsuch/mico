@@ -1,0 +1,992 @@
+/**
+* Theming specificities
+* User can choose an alternate theme in the settings panel.
+*
+* This base is used in each theme colors.
+*/
+
+
+/* ------- Global theme rules ------- */
+@import '../bootstrap/mixins';
+@import '../var-common';
+$text-color: $theme-text-color;
+
+
+/* ------- Mixins ------- */
+@mixin gradient-check($gradient, $gradient-type) {
+  @if ($gradient) {
+    @if ($gradient-type == 'banner') {
+      @include gradient-vertical(darken($theme-background, 5%), $theme-background, 0%, 40%);
+    }
+    @else {
+      @include gradient-vertical($theme-background, darken($theme-background, 10%), 0%, 100%);
+    }
+  }
+  @else {
+    background-image: none;
+    @include reset-filter();
+  }
+}
+
+
+
+/* ------- Global ------- */
+body {
+  color: $theme-text-color; 
+}
+
+a {
+  color: $theme-link-color; 
+
+  &:hover,
+  &:focus {
+    color: $theme-link-hover-color; 
+  }
+
+  /*&:visited {
+    color: $theme-link-hover-color;
+  }*/
+}
+
+.link-no-color {
+  color: $text-color; 
+}
+
+blockquote {
+  border-color: $theme-primary; 
+}
+
+
+
+/* ------- Layout ------- */
+.banner {
+  @include gradient-check($gradient-banner, 'banner'); 
+}
+
+.box {
+  background-color: $box-bg; 
+}
+
+#layout-main {
+  > .container,
+  > .container-fluid {
+    background-color: $theme-background; 
+  }
+}
+
+
+/* ------- Headings ------- */
+h1 { 
+  color: $theme-primary-dark;	
+  border-bottom-color: $theme-primary-dark; 
+}
+
+.page-header h1 { 
+  color: $theme-background-text; 
+
+  small {
+    color: $theme-background-text;
+  }
+}
+
+h2 { 
+  color: $theme-secondary;
+}
+
+.page-header h2 { 
+  color: $theme-background-text;
+
+  small { 
+    color: $theme-background-text; 
+  }
+}
+
+h3 { 
+  color: $theme-primary-dark; 
+}
+
+h4 { 
+  color: $text-color; 
+}
+
+h5 { 
+  color: $theme-secondary; 
+}
+
+h6 { 
+  color: $theme-primary-dark; 
+}
+
+
+/* ------- List ------- */
+ul.list li:before { 
+  color: $theme-primary-dark; 
+}
+
+ul.list li li:before { 
+  color: $theme-secondary; 
+}
+
+
+/* ------- Banner ------- */
+.banner__item > .btn-link:hover,
+.banner__item > .btn-link:focus {
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+.banner__item .dropdown-menu .btn-link {
+  color: $text-color; 
+}
+
+
+/* ------- Navbar ------- */
+.navbar-default {
+  border-bottom-color: $theme-primary; 
+
+  .navbar-nav {
+    > li > a:hover,
+    > li > a:focus {
+      background-color: $theme-accent; 
+      color: $theme-accent-text;
+    }
+
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      background-color: $theme-primary; 
+      color: $theme-primary-text; 
+    }
+  }
+
+  .navbar-brand {
+    &:hover,
+    &:focus {
+      background-color: $theme-accent; 
+      color: $theme-accent-text;
+    }
+
+    &.active {
+      background-color: $theme-primary; 
+      color: $theme-primary-text; 
+    }
+  }
+
+  .navbar-toggle {
+    &:hover,
+    &:focus {
+      background-color: $theme-accent;
+
+      .icon-bar {
+        background-color: $theme-accent-text;
+      }
+    }
+  }
+
+}
+
+.main-menu__user {
+  .dropdown-toggle {
+    &:hover,
+    &:focus {
+      background-color: $theme-primary; 
+      color: $theme-primary-text;
+    }
+  }
+}
+
+
+
+/* ------- Nav ------- */
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+
+.nav-tabs > li.active > a,
+.nav-primary > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-primary > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-primary > li.active > a:focus,
+.a-Tabs li.apex-rds-selected > a,
+.a-Tabs li.apex-rds-selected > a:hover,
+.a-Tabs li.apex-rds-selected > a:focus {
+  background-color: #fff; 
+  color: $theme-primary-dark; 
+  border-color: $theme-primary; 
+  border-bottom-color: transparent; 
+}
+
+.nav-primary, .nav-tabs {
+  border-bottom-color: $theme-primary; 
+}
+
+.nav-primary {
+  background-color: $theme-background; 
+  color: $theme-background-text; 
+}
+
+.nav-tabs > li > a,
+.nav-primary > li > a,
+.a-Tabs > li > a {
+  background-color: $theme-accent;
+  border-bottom-color: $theme-primary;
+
+  &:hover,
+  &:focus {
+    border-color: $theme-primary;
+    background-color: transparent;
+    color: $theme-primary-dark;
+  }
+}
+
+.nav-pills > li > a {
+  background-color: $theme-accent; 
+
+  &:hover,
+  &:focus {
+    border-color: $theme-primary; 
+    background-color: #fff; 
+    color: $theme-primary-dark;
+  }
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus { 
+  border-color: $theme-primary; 
+  background-color: #fff;
+  color: $theme-primary-dark; 
+}
+
+// Vertical nav
+.nav-vertical-title,
+.nav-vertical-list ul > .has-submenu > a {
+  background-color: $theme-primary;
+  color: $theme-primary-text;
+}
+
+.nav-vertical-list .active a {
+  color: $theme-primary-dark;
+  border-left-color: $theme-primary-dark;
+}
+
+.nav-vertical-list {
+  li {
+    background-color: $theme-light;
+    color: $theme-light-text;
+
+    &:hover {
+      border-left-color: $theme-primary-dark;
+    }
+  }
+
+  > .has-submenu::after {
+    color: $theme-primary-dark;
+  }
+}
+
+// Vertical tab list
+.vertical-tab-list-item {
+  &.active {
+    background-color: $theme-primary-dark;
+    color: $theme-primary-dark-text;
+
+    &:after {
+      border-left-color: $theme-primary-dark;
+    }
+  }
+
+  // when is an <a>
+  @at-root a#{&} {
+    &:hover,
+    &:focus {
+      background-color: $theme-accent;
+      color: $theme-accent-text;
+
+      &:after {
+        border-left-color: $theme-accent;
+      }
+    }
+  }
+}
+
+
+
+/* ------- Scroll spy menu ------- */
+.scroll-spy-menu {
+  .nav {
+    > li.active {
+      > a {
+        color: $theme-primary-dark; 
+        border-left-color: $theme-primary-dark;
+      }
+    }
+
+    > li > a {
+      &:hover,
+      &:focus {
+        color: $theme-accent-text;
+      }
+    }
+  }
+}
+
+
+
+/* ------- Pagination ------- */
+.pagination {
+  > li {
+    > a {
+      color: $theme-primary-dark;
+
+      &:hover,
+      &:focus {
+        background-color: $theme-accent; 
+        color: $theme-accent-text;
+      }
+    }
+
+    > span {
+      &:hover,
+      &:focus {
+        background-color: $theme-accent; 
+        color: $theme-accent-text;
+      }
+    }
+  }
+
+  > .active {
+    > a,
+    > a:hover,
+    > a:focus,
+    > span,
+    > span:hover,
+    > span:focus {
+      background-color: $theme-primary; 
+      color: $theme-primary-text;
+    }
+  }
+}
+
+.pager li > a:hover,
+.pager li > a:focus { 
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+
+/* ------- Buttons ------- */
+.btn-primary {
+  @include button-variant($theme-primary-text, $theme-primary, $theme-primary-dark); 
+}
+
+.btn-link {
+  &:hover,
+  &:focus,
+  &:active {
+    color: $theme-link-hover-color; 
+  }
+}
+
+
+/* ------- Jumbotron ------- */
+.jumbotron { 
+  background-color: $theme-background; 
+}
+
+
+/* ------- Wells ------- */
+.well { 
+  background-color: $theme-background; 
+}
+
+/* ------- Tiles ------- */
+.tile {
+  &:hover {
+    background-color: $theme-accent;
+    
+    .tile__title {
+      color: $theme-accent-text; 
+    }
+
+    .tile__icon {
+      color: $theme-accent-text; 
+    }
+
+    .tile__description {
+      color: $theme-accent-text; 
+    }
+  }
+
+  &__title { 
+    color: $theme-accent-text; 
+  }
+
+  &__icon { 
+    color: $theme-primary; 
+  }
+
+  &__description {
+    border-top-color: $theme-primary;
+    color: $theme-accent-text; 
+  }
+
+  &__back {
+    color: $theme-accent-text;
+    background-color: $theme-accent; 
+  }
+} 
+ 
+  
+  
+
+/* ------- Box ------- */
+.tile-favorite {
+  .sub-content:hover { background-color: $theme-primary; } 
+  .sub-icon { color: $theme-accent; } 
+}
+
+ 
+ 
+
+.tile.tile-flip:hover {
+  background-color: transparent; 
+}
+
+.tile-flip:hover .tile__front {
+  background-color: $theme-accent; 
+}
+
+.tiles-light .tile:hover,
+.tiles-light .tile__front:hover,
+.tiles-light .tile__back:hover {
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+/* ------- Listgroup ------- */
+a.list-group-item:hover,
+a.list-group-item:focus,
+button.list-group-item:hover,
+button.list-group-item:focus {
+  background-color: $theme-accent; color: $theme-accent-text; 
+}
+
+.list-group-item.active,
+.list-group-item.active:hover,
+.list-group-item.active:focus {
+  background-color: $theme-primary; 
+  color: $theme-primary-text; 
+  border-color: $theme-primary; 
+}
+
+.list-group a[data-toggle="collapse"][aria-expanded="true"] {
+  background-color: $theme-primary; 
+  border-color: $theme-primary; 
+  color: $theme-primary-text; 
+}
+
+.list-group .collapse,
+.list-group .collapsing {
+  border-left-color: $theme-primary; 
+}
+
+
+/* ------- Collapse ------- */
+.list-group a[data-toggle="collapse"][aria-expanded="true"] {
+  background-color: $theme-secondary; 
+  border-color: $theme-secondary; 
+  color: $theme-secondary-text; 
+}
+
+.list-group .collapse,
+.list-group .collapsing { 
+  border-left-color: $theme-secondary; 
+}
+
+
+/* ------- Dropdown ------- */
+.dropdown-menu  li.is-open  a { 
+  color: $theme-accent-text; 
+}
+
+.dropdown-menu li.active > a,
+.dropdown-menu li.active > a:hover { 
+  background-color: $theme-primary; 
+  color: $theme-primary-text; 
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+.dropdown-menu__level1 > li.is-open { 
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+
+/* ------- Tables ------- */
+.table-hover > tbody > tr:hover { 
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+
+/* ------- Forms ------- */
+.form-control:focus { 
+  border-color: $theme-primary; 
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba($theme-primary, 0.6); 
+}
+
+.mandatory-star { 
+  color: $theme-primary-dark; 
+}
+
+
+/* ------- Select2 ------- */
+.select2-container--bootstrap .select2-results__option--highlighted[aria-selected] { 
+  background-color: $theme-accent; color: $theme-accent-text; 
+}
+
+.select2-container--bootstrap.select2-container--focus .select2-selection,
+.select2-container--bootstrap.select2-container--open .select2-selection { 
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba($theme-primary, 0.6); 
+  border-color: $theme-primary; 
+}
+
+.select2-container--bootstrap .select2-dropdown { 
+  border-color: $theme-primary; 
+}
+
+
+/* ------- Panels ------- */
+.panel { 
+  background-color: $box-bg; 
+}
+
+.panel-primary { 
+  @include panel-variant($theme-primary-dark, $theme-primary-text, $theme-primary, $theme-primary); 
+}
+
+
+/* ------- Lables ------- */
+.label-primary { 
+  background-color: $theme-primary; 
+  color: $theme-primary-text; 
+}
+
+
+/* ------- Progress bar ------- */
+.progress-bar { 
+  background-color: $theme-primary; 
+  color: $theme-primary-text; 
+}
+
+.progress-bar-success { 
+  background-color: $brand-success; 
+  color: $brand-success-text; 
+}
+
+.progress-bar-info { 
+  background-color: $brand-info; 
+  color: $brand-info-text; 
+}
+
+.progress-bar-warning { 
+  background-color: $brand-warning; 
+  color: $brand-warning-text; 
+}
+
+.progress-bar-danger { 
+  background-color: $brand-danger; 
+  color: $brand-danger-text; 
+}
+
+
+/* ------- Spinner ------- */
+.spinner:before {	
+  background-color: darken($theme-primary, 20%); 
+}
+
+.spinner:after { 
+  background-color: darken($theme-primary, 10%); 
+}
+
+.spinner > div:before {	
+  background-color: $theme-primary; 
+}
+
+.spinner > div:after { 
+  background-color: lighten($theme-primary, 10%); 
+}
+
+/* ------- Datepicker ------- */
+.Zebra_DatePicker .dp_header .dp_hover { 
+  background: $theme-accent; color: $theme-accent-text; 
+}
+
+.Zebra_DatePicker td.dp_selected { 
+  background-color: $theme-primary; color: $theme-primary-text !important 
+}
+
+.Zebra_DatePicker .dp_header { 
+  background-color: $theme-primary; color: $theme-primary-text; 
+}
+
+.Zebra_DatePicker td.dp_current { 
+  color: $theme-primary; 
+}
+
+.Zebra_DatePicker td.dp_hover { 
+  background: $theme-accent; color: $theme-accent-text; 
+}
+
+
+/* ------- Data tables ------- */
+.bootgrid-header .actionBar .btn-group > .btn-group .dropdown-menu .dropdown-item:hover,
+.bootgrid-footer .infoBar .btn-group > .btn-group .dropdown-menu .dropdown-item:hover,
+.bootgrid-header .actionBar .btn-group > .btn-group .dropdown-menu .dropdown-item:focus,
+.bootgrid-footer .infoBar .btn-group > .btn-group .dropdown-menu .dropdown-item:focus { 
+  color: $theme-accent-text; 
+  background-color: $theme-accent; 
+}
+
+.bootgrid-table th > .column-header-anchor { 
+  color: $text-color; 
+}
+
+
+/* ------- Calendar ------- */
+.fc-event { 
+  @include button-variant($theme-primary-text, $theme-primary, $theme-primary-dark); 
+}
+
+
+/* ------- Tree view ------- */
+.jstree-default .jstree-hovered,
+.jstree-default .jstree-context { 
+  background-color: $theme-accent; 
+  color: $theme-accent-text; 
+}
+
+.jstree-default .jstree-clicked { 
+  background-color: $theme-primary; 
+  color: $theme-primary-text; 
+}
+
+/* ------- Workflow ------- */
+.nav-workflow {
+  .step { 
+    background-color: $box-bg; 
+    color: $text-color; 
+  }
+
+  li {
+    background-color: $theme-accent; 
+    color: $theme-accent-text; 
+
+    &::before {
+      border-left-color: $box-bg; 
+    }
+
+    &::after { 
+      border-left-color: $theme-accent; 
+    }
+
+    &.active { 
+      color: $theme-primary-text; 
+      background-color: $theme-primary;
+
+      &::after { 
+        border-right-color: $theme-primary; 
+        border-left-color: $theme-primary; 
+      }
+
+      .step { 
+        color: $text-color; 
+      }
+    }
+  }
+}
+
+.nav-workflow-light {
+  li {
+    .step {
+      background-color: transparent;
+    }
+
+    &.active {
+      .step {
+        color: $theme-primary-text;
+      }
+    }
+  }
+}
+
+
+.nav-workflow.nav-stacked {
+  li {
+    color: $text-color;
+
+    &::before {
+      background-color: $theme-accent;
+    }
+
+    &.active {
+      color: $theme-primary-dark;
+
+      .step {
+        color: $theme-primary-text;
+      }
+
+      &::before {
+        background-color: $theme-primary;
+      }
+    }
+
+    &:first-child,
+    &:last-child {
+      &::after,
+      &::after {
+        background-color: $box-bg;
+      }
+    }
+  }
+}
+
+
+/* ------- Timeline ------- */
+.timeline__item.active .timeline__highlight { 
+  background-color: $theme-primary; 
+}
+
+.timeline__item.active .timeline__elapsed { 
+  color: $theme-primary-text; 
+}
+
+.timeline__item--primary .timeline__step { 
+  background-color: $theme-primary; 
+  color: $theme-primary-text; 
+}
+
+
+/* ------- Footer ------- */
+.footer { 
+  border-top-color: $theme-secondary; 
+}
+
+
+/* ------- Helpers ------- */
+.bg-success { 
+  background-color: $state-success-bg;
+  color: #212121; 
+}
+
+.bg-success-dark { 
+  background-color: $btn-success-bg;
+  color: $btn-success-color; 
+}
+
+.bg-info { 
+  background-color: $state-info-bg;
+  color: #212121; 
+}
+
+.bg-info-dark { 
+  background-color: $btn-info-bg;
+  color: $btn-info-color; 
+}
+
+.bg-warning { 
+  background-color: $state-warning-bg;
+  color: #212121; 
+}
+
+.bg-warning-dark { 
+  background-color: $btn-warning-bg;
+  color: $btn-warning-color; 
+}
+
+.bg-danger { 
+  background-color: $state-danger-bg;
+  color: #212121; 
+}
+
+.bg-danger-dark { 
+  background-color: $btn-danger-bg;
+  color: $btn-danger-color; 
+}
+
+.bg-transparent { 
+  background-color: transparent; 
+}
+
+.bg-white { 
+  background-color: #fff;
+  color: #212121; 
+}
+
+.bg-dark { 
+  background-color: $grey-800;
+  color: #fff; 
+}
+
+
+.bg-alt-blue { 
+  background-color: #0C4DA2;
+  color: #fff; 
+}
+
+.bg-alt-cyan { 
+  background-color: $cyan-700;
+  color: $cyan-700-text; 
+}
+
+.bg-alt-orange { 
+  background-color: $orange-800;
+  color: $orange-800-text; 
+}
+
+.bg-alt-purple { 
+  background-color: $purple-600;
+  color: $purple-600-text; 
+}
+
+.bg-alt-green { 
+  background-color: $light-green-800;
+  color: $light-green-800-text; 
+}
+
+.bg-alt-pink { 
+  background-color: $pink-700;
+  color: $pink-700-text; 
+}
+
+.bg-alt-grey { 
+  background-color: $grey-800;
+  color: $grey-800-text; 
+}
+
+.bg-alt-yellow { 
+  background-color: $amber-400;
+  color: $amber-400-text; 
+}
+
+.bg-alt-red { 
+  background-color: $red-A700;
+  color: $red-A700-text; 
+}
+
+.bg-alt-lime { 
+  background-color: $lime-800;
+  color: $lime-800-text; 
+}
+
+.bg-alt-teal { 
+  background-color: $teal-600;
+  color: $teal-600-text; 
+}
+
+.bg-alt-blue-grey { 
+  background-color: $blue-grey-700;
+  color: $blue-grey-700-text; 
+}
+
+.bg-alt-brown { 
+  background-color: $brown-600;
+  color: $brown-600-text; 
+}
+
+.bg-alt-light-green { 
+  background-color: $green-400;
+  color: $green-400-text; 
+}
+
+.bg-alt-light-blue { 
+  background-color: $light-blue-100;
+  color: $light-blue-100-text; 
+}
+
+.bg-alt-light-red { 
+  background-color: $red-400;
+  color: $red-400-text; 
+}
+
+
+.bg-theme-primary-dark { 
+  background-color: $theme-primary-dark;
+  color: $theme-primary-dark-text; 
+}
+
+.bg-theme-primary { 
+  background-color: $theme-primary;
+  color: $theme-primary-text; 
+}
+
+.bg-theme-secondary { 
+  background-color: $theme-secondary;
+  color: $theme-secondary-text; 
+}
+
+.bg-theme-accent { 
+  background-color: $theme-accent;
+  color: $theme-accent-text; 
+}
+
+.bg-theme-background { 
+  background-color: $theme-background;
+  color: $theme-background-text; 
+}
+
+
+.text-muted { 
+  color: $text-muted; 
+}
+
+.text-success { 
+  color: $state-success-text; 
+}
+
+.text-info { 
+  color: $state-info-text; 
+}
+
+.text-warning { 
+  color: $state-warning-text; 
+}
+
+.text-danger { 
+  color: $state-danger-text; 
+}
+
+.text-white { 
+  color: #fff; 
+}
+
+
+.text-theme-primary-dark { 
+  color: $theme-primary-dark; 
+}
+
+.text-theme-primary { 
+  color: $theme-primary; 
+}
+
+.text-theme-secondary { 
+  color: $theme-secondary; 
+}
+
+.text-theme-accent { 
+  color: $theme-accent; 
+}
+
+.text-theme-background { 
+  color: $theme-background; 
+}

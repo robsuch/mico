@@ -1,0 +1,178 @@
+/**
+* Larger font-size : 140%
+* User choice in the settings panel.
+*/
+
+body,
+.dropdown-menu { 
+	font-size: 20px; 
+}
+
+.banner { 
+	height: 75px; 
+}
+
+.banner__item > .btn-link { 
+	height: 75px; 
+	width: 84px; 
+}
+
+.banner__search form { 
+	margin-right: 15px; 
+}
+
+.main-menu__position { 
+	display: none; 
+}
+
+.form-control { 
+	font-size: 20px; 
+	height: 43px; 
+}
+
+.btn { 
+	font-size: 20px; 
+}
+
+.btn-lg,
+.btn-group-lg > .btn { 
+	font-size: 20px; 
+}
+
+.btn-sm,
+.btn-group-sm > .btn { 
+	font-size: 16px; 
+}
+
+.btn-xs,
+.btn-group-xs > .btn { 
+	font-size: 16px; 
+}
+
+.tooltip { 
+	font-size: 16px;
+}
+
+pre,
+pre code { 
+	font-size: 16px; 
+}
+
+.lead { 
+	font-size: 24px; 
+}
+
+.progress-bar { 
+	font-size: 17px;
+}
+
+.collapsible-line .collapsible-line__icon { 
+	top: -2px; 
+}
+
+.form-horizontal .has-feedback .form-control-feedback { 
+	right: 20px; 
+}
+
+.form-control-feedback { 
+	line-height: 43px;
+}
+
+.select2-container--bootstrap .select2-selection--single,
+.select2-container--bootstrap .select2-selection--multiple .select2-search--inline .select2-search__field { 
+	height: 43px; 
+	font-size: 20px; 
+}
+
+.select2-selection__choice { 
+	font-size: 20px; 
+}
+
+.jumbotron p { font-size: 30px; }
+
+.calendar-mini.fc-icon,
+.calendar-mini.fc { 
+	font-size: 0.85em; 
+}
+
+
+
+/* ------- Titles ------- */
+h1 { 
+	font-size: 3.57rem; 
+}
+
+h2 { 
+	font-size: 3.28rem; 
+}
+
+h3 { 
+	font-size: 2.71rem; 
+}
+
+h4 { 
+	font-size: 2.28rem; 
+}
+
+h5 { 
+	font-size: 2rem; 
+}
+
+h6 { 
+	font-size: 1.71rem; 
+}
+
+
+
+
+
+/* ------- Icons size modifier ------- */
+.hr-icon-12 { 
+	font-size: 17px !important;
+	width: 26px; 
+}
+
+.hr-icon-14 { 
+	font-size: 20px !important;
+	width: 29px; 
+}
+
+.hr-icon-20 { 
+	font-size: 28px !important;
+	width: 37px; 
+}
+
+.hr-icon-24 { 
+	font-size: 34px !important;
+	width: 43px; 
+}
+
+.hr-icon-28 { 
+	font-size: 40px !important;
+	width: 49px; 
+}
+
+.hr-icon-38 { 
+	font-size: 54px !important;
+	width: 63px; 
+}
+
+.hr-icon-48 { 
+	font-size: 68px !important;
+	width: 77px; 
+}
+
+.hr-icon-60 { 
+	font-size: 86px !important;
+	width: 95px; 
+}
+
+.hr-icon-80 { 
+	font-size: 114px !important;
+	width: 123px; 
+}
+
+.hr-icon-100 { 
+	font-size: 143px !important;
+	width: 152px; 
+}

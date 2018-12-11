@@ -1,0 +1,1257 @@
+/* ------- Navigation section ------- */
+/*
+Main menu
+
+The main menu is the starting point that helps the user find information or execute a function. It automatically adapt to smaller screens (like phones and tablets) and sticks to the top of the screen when scrolling.<br />
+It could also integrate forms and dropdown.<br />
+There are several displays available.
+
+Styleguide 2.1
+*/
+.navbar-right {
+  margin-right: 0;
+}
+.main-menu > .container,
+.main-menu > .container-fluid {
+  position: relative;
+}
+.main-menu__user {
+  color: $navbar-default-color;
+  font-size: 0.85em;
+  float: right;
+  position: relative;
+  
+  .dropdown-toggle {
+  	&:hover,
+	  &:focus {
+	  	background-color: $theme-primary; 
+	  	color: $theme-primary-text;
+	  }
+  }
+  
+  .dropdown-menu {
+  	min-width: 100%;
+  	max-width: 36rem;
+  	margin-top: 0;
+		border-top-right-radius: 0;
+		border-top-left-radius: 0;
+		font-size: 1em;
+		
+		a {
+			position: relative;
+			padding-left: 40px;
+			
+			&:hover,
+			&:focus {
+				.hr-icon__check {
+					opacity: .35;
+				}
+			}
+			
+			/* is selected */
+			&.is-selected {
+				color: $state-success-text;
+			
+				.hr-icon__check {
+					opacity: 1;
+				}
+			}
+		}
+		
+		.hr-icon__check {
+			position: absolute;
+			left: 5px;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			-ms-transform: translateY(-50%);
+			transform: translateY(-50%);
+			opacity: 0;
+		}
+  }
+}
+
+.main-menu__userinfos {
+	background-color: transparent;
+  padding: 10px 15px;
+  border: 0;
+  line-height: 1.25;
+  text-align: right;
+	height: $navbar-height;
+  display: flex;
+  align-items: center;
+}
+
+.main-menu__username {
+  font-weight: 700;
+  display: block;
+  text-transform: uppercase;
+}
+
+.main-menu__position {
+	display: block;
+	text-decoration: underline;
+}
+
+@media screen and (min-width: $screen-md-min) {
+  .main-menu__user {
+    float: none;
+    margin-right: 0;
+    
+    .dropdown-menu {
+			left: auto;
+			right: 0;
+			font-size: $font-size-base;
+		}
+  }
+}
+
+.container > .navbar-collapse {
+  margin-right: -15px;
+}
+
+.navbar-right.navbar-btn {
+  margin-right: 0;
+}
+
+.main-menu .dropdown-toggle:focus {
+  outline: thin dotted;
+  outline-offset: -2px;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar-default {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 6px solid $theme-primary;
+  border-radius: 0;
+  z-index: 2;
+
+  &.affix {
+    width: 100%;
+    z-index: $zindex-navbar;
+    top: 0;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-brand {
+    &:hover {
+      color: $navbar-default-link-hover-color;
+      background-color: $navbar-default-link-hover-bg;
+    }
+
+    &.active {
+      background-color: $theme-primary;
+      color: $theme-primary-text;
+    }
+  }
+
+  .navbar-toggle:focus,
+  .navbar-toggle:hover {
+    .icon-bar {
+      background-color: $theme-accent-text;
+    }
+  }
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 15px;
+}
+
+
+// Title in navigqtion bar
+.navbar-title {
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 1.5rem 0;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/*
+Horizontal main menu
+
+This display can only be used if you have a rather simple menu, with up to five items.<br />
+Each item can have sub items, displayed in a dropdown.
+
+Markup: ../../markup/main-menu-horizontal.html
+
+Styleguide 2.1.1
+*/
+
+/*
+Dropdown main menu
+
+This display allows larger menus with lots of items. But it can also be used for smaller menus too.<br />
+Each item can have sub-items.
+
+Markup: ../../markup/main-menu-dropdown.html
+
+Styleguide 2.1.2
+*/
+
+/*
+Mega menu
+
+This display allows more complex layout for menu items.<br />
+You can use any HTML code in the mega menu dropdown (lists, tables, photos, videos, ...).<br />
+A single menu may content simple dropdown and mega menu items at the same time.
+
+Markup: ../../markup/main-menu-mega.html
+
+Styleguide 2.1.3
+*/
+.mega-menu.dropdown {
+  position: static;
+
+  .dropdown-menu {
+    left: -1px;
+  }
+}
+
+/*
+Side menu
+
+The side menu displays the main navigation links in the sidebar, including sub items.<br />
+It is particularly useful when navigation tree tends to be complex.<br />
+You can find a full example on the current page, and complete documentation on <a href="http://getbootstrap.com/javascript/#scrollspy">Bootstrap's site</a>
+<div class="alert alert-warning no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__exclamation-triangle hr-icon-38 text-warning"></span>
+  </div>
+  <div class="alert-body">
+    <strong>It's not a main menu</strong><br />
+    Side menu should not replace main menu bar. It is just an optional display.
+  </div>
+</div>
+
+Markup: ../../markup/main-menu-side.html
+
+Styleguide 2.1.4
+*/
+.scroll-spy-menu {
+  .nav {
+    > li {
+      > a {
+        color: $grey-800;
+        border-left: 2px solid transparent;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 8px;
+
+        &:hover,
+        &:focus {
+          color: $theme-accent-text;
+        }
+      }
+
+      &.active {
+        > a {
+          color: $theme-primary-dark;
+          border-left-color: $theme-primary-dark;
+          font-weight: bold;
+        }
+
+        .nav {
+          display: block;
+        }
+      }
+    }
+
+    .nav {
+      display: none;
+
+      > li > a {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 13px;
+        line-height: 1;
+      }
+    }
+  }
+
+  &.affix {
+    top: 73px;
+  }
+}
+
+/*
+Secondary menu
+
+This vertical menu is related to the current page or section.<br />
+Two possible display are provided.<br />
+<div class="alert alert-warning no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__exclamation-triangle hr-icon-38 text-warning"></span>
+  </div>
+  <div class="alert-body">
+    <strong>It's not a main menu</strong><br />
+    Secondary menu should not replace main menu. It should not contain global application navigation.
+  </div>
+</div>
+
+Styleguide 2.2
+*/
+.secondary-menu {
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  margin: -15px 0 -15px 0;
+  padding: 15px 0 15px 0;
+  border-bottom: none;
+  z-index: 1;
+
+  .btn-toggle {
+    margin: -5px 5px 10px 0;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    margin: 0;
+    float: left;
+
+    > li {
+      float: none;
+
+      > a {
+        display: block;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+#page-wrapper {
+  margin-left: 215px;
+}
+
+/*
+Collapsible secondary menu
+
+Menu can be minimised to save space.<br />
+Each item can lead to a different page, or act like tabs (you can find a full example on <a href="../project/example/dashboard.html">Dashboard page</a>).<br />
+Collapsible secondary menu has a fixed width, so it isn't based on global grid structure.<br />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Additional class</strong><br />
+    When using collapsible secondary menu, make sure to add id "page-wrapper" to main content (see examples).
+  </div>
+</div>
+
+Markup: ../../markup/secondary-menu-collapse.html
+
+Styleguide 2.2.1
+*/
+
+/*
+Multi-level secondary menu
+
+Allows more complex sub-navigation.<br />
+Multi-level secondary menu relies on grid structure, so you can set width according to your needs.<br />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Tree view</strong><br />
+    Multi-level secondary menu relies on tree view component, so additional files have to be added. See <a href="section-4.html#kssref-4-12">Tree view component</a> for more information.
+  </div>
+</div>
+
+Markup: ../../markup/secondary-menu-multi.html
+
+Styleguide 2.2.2
+*/
+.secondary-menu-multi {
+  width: 100%;
+  position: relative;
+
+  .jstree-icon {
+    float: left;
+    width: 20px;
+    margin-top: 5px;
+  }
+
+  .jstree-node {
+    margin-left: 0px;
+  }
+
+  .jstree-anchor {
+    display: block;
+    color: #fff;
+    margin-left: 0;
+    padding: 5px 5px 5px 20px;
+  }
+
+  .jstree-hovered {
+    color: $theme-accent-text;
+  }
+
+  ul ul {
+    background-color: $grey-700;
+    border-top: 1px solid $grey-900;
+    border-bottom: 1px solid $grey-600;
+    margin-left: 0;
+    padding-left: 10px;
+    position: relative;
+
+    .jstree-anchor {
+      margin-left: -10px;
+      padding-left: 30px;
+      border: none;
+    }
+
+    &:before {
+      background: none;
+      border-top: 1px solid $grey-600;
+      border-bottom: 1px solid $grey-900;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  }
+
+  ul ul ul {
+    background-color: $grey-600;
+    border-top: 1px solid $grey-800;
+    border-bottom: 1px solid $grey-500;
+    margin-left: -10px;
+    padding-left: 20px;
+
+    .jstree-anchor {
+      margin-left: -20px;
+      padding-left: 40px;
+      border: none;
+    }
+
+    &:before {
+      background: none;
+      border-top: 1px solid $grey-500;
+      border-bottom: 1px solid $grey-800;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  }
+
+  ul ul ul ul {
+    background-color: $grey-500;
+    border-top: 1px solid $grey-700;
+    border-bottom: 1px solid $grey-400;
+    margin-left: -20px;
+    padding-left: 30px;
+
+    .jstree-anchor {
+      margin-left: -30px;
+      padding-left: 50px;
+      color: $grey-900;
+      border: none;
+    }
+
+    &:before {
+      background: none;
+      border-top: 1px solid $grey-400;
+      border-bottom: 1px solid $grey-700;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  }
+
+  ul ul ul ul ul {
+    background-color: $grey-400;
+    border-top: 1px solid $grey-600;
+    border-bottom: 1px solid $grey-300;
+    margin-left: -20px;
+    padding-left: 30px;
+
+    .jstree-anchor {
+      margin-left: -40px;
+      padding-left: 60px;
+      color: $grey-900;
+      border: none;
+    }
+
+    &:before {
+      background: none;
+      border-top: 1px solid $grey-600;
+      border-bottom: 1px solid $grey-300;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+
+/*
+Breadcrumb
+
+The  breadcrumb is a graphical control element used as a navigational aid in user interfaces. It allows users to keep track of their location within a navigational hierarchy.
+
+Markup: ../../markup/breadcrumb.html
+
+Styleguide 2.3
+*/
+
+.breadcrumb {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
+Tabs and pills
+
+<p>Tabs and pills enable content organization at a high level, such as switching between views, data sets, or functional aspects of an app.<br />
+Primary tabs are intended to be used at the beginning of a "box" container.</p>
+
+<p>If you use the <strong>APEX Component</strong> for tabs, the style will apply automatically, you don't have to modify anything, the styleguide is supporting the class of APEX built-in tabs.</p>
+
+Styleguide 2.4
+*/
+
+/*
+Horizontal tabs and pills
+
+Markup: ../../markup/tabs-horizontal.html
+
+.nav-primary - Primary tabs
+.nav-tabs - Secondary tabs
+.nav-pills - Pills
+
+Styleguide 2.4.1
+*/
+.nav-primary,
+.nav-tabs {
+  border-bottom-color: $theme-primary;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  color: $nav-link-hover-color;
+}
+
+.nav-tabs > li > a,
+.nav-primary > li > a {
+  border-radius: 0;
+  background-color: $theme-accent;
+  border: 1px solid transparent;
+  border-bottom-color: $theme-primary;
+  text-decoration: none;
+  color: $grey-900;
+  margin-right: 4px;
+
+  &:hover,
+  &:focus {
+    border-color: $theme-primary;
+    background-color: transparent;
+    color: $theme-primary;
+  }
+}
+
+.nav-tabs > li.active > a,
+.nav-primary > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-primary > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-primary > li.active > a:focus {
+  background-color: #fff;
+  color: $theme-primary;
+  border-color: $theme-primary;
+  border-bottom-color: transparent;
+}
+
+.nav-primary {
+  @extend .nav-tabs;
+  margin: -16px -16px 20px -15px;
+  background-color: $theme-background;
+  color: $theme-background-text;
+}
+
+.nav-pills > li > a {
+  border: 1px solid transparent;
+  text-decoration: none;
+  background-color: $theme-accent;
+  color: $grey-900;
+  margin-right: 2px;
+
+  &:hover,
+  &:focus {
+    border-color: $theme-primary;
+    background-color: #fff;
+    color: $theme-primary;
+  }
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  background-color: #fff;
+  color: $theme-primary;
+  border-color: $theme-primary;
+}
+
+// For APEX Tabs
+.a-Tabs {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  border-bottom: 1px solid $theme-primary;
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+  }
+
+  > li {
+    float: left;
+    margin-bottom: -1px;
+    position: relative;
+    display: block;
+
+    > a {
+      border-radius: 0;
+      background-color: $theme-accent;
+      border: 1px solid transparent;
+      border-bottom-color: $theme-primary;
+      text-decoration: none;
+      color: $grey-900;
+      margin-right: 4px;
+
+      &:hover,
+      &:focus {
+        background-color: #fff;
+        color: $theme-primary;
+        border-color: $theme-primary;
+      }
+    }
+  }
+
+   li.apex-rds-selected > a {
+    background-color: #fff;
+    color: $theme-primary;
+    border-color: $theme-primary;
+    border-bottom-color: transparent;
+  }
+}
+
+/*
+Vertical pills
+
+Markup: ../../markup/tabs-vertical.html
+
+Styleguide 2.4.2
+*/
+
+/*
+Pagination
+
+Pagination is a user interface pattern that divides content into separate pages.<br />
+It is important to have it on your application to prevent your pages from becoming too long and overwhelming.<br />
+You can use a full pagination (with page number) or just previous/next buttons.
+
+Markup: ../../markup/pagination.html
+
+Styleguide 2.5
+*/
+.pager li > a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $pager-hover-color;
+  }
+}
+
+/*
+Workflow
+
+Workflows connect apps and actions together to automate things you do on your application. It is a useful tool for visualizing sequential steps.<br />
+We provide different ways to display step by step workflow.<br />
+According to the number of steps and the information you have to provide, the workflow can be horizontal or vertical. <br />
+Choose the horizontal workflow when it contains less than 5 steps. Use the vertical one when the process is more complex.<br />
+
+Styleguide 2.6
+*/
+
+/*
+Horizontal workflow
+
+This option displays the position of the step and its name. Displaying the step numbers is optional in this case.<br />
+Different options are available:<br />
+<ul class="list">
+  <li>Horizontal workflow need class "nav-horizontal"</li>
+  <li>Larger display with class "nav-workflow-lg"</li>
+  <li>Compact display with class "nav-workflow-light"</li>
+</ul>
+Large horizontal workflows are used when they are not too much steps to display.<br />
+In compact workflows only the position is displayed. In this case, a tooltip should be added to help users identify the step.
+
+Markup: ../../markup/workflow-horizontal.html
+
+Styleguide 2.6.1
+*/
+.nav-workflow {
+  border-collapse: separate;
+  border-spacing: 10px 0;
+  margin-left: -2px;
+  margin-right: -2px;
+  margin-bottom: 10px;
+
+  li {
+    min-height: 40px;
+    padding: 6px 5px 6px 15px;
+    background-color: $theme-accent;
+    color: $theme-accent-text;
+    position: relative;
+    display: table-cell;
+    float: none;
+    font-size: 1.2rem;
+
+    &::before,
+    &::after  {
+      content: '';
+      border-left: 8px solid #fff;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &:after {
+      content: '';
+      border-left-color: $theme-accent;
+      left: 100%;
+      z-index: 1;
+    }
+
+    &:first-child::before {
+      border-left: none;
+    }
+
+    &:last-child {
+      padding-right: 20px;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &.active {
+      color: $theme-primary-text;
+      background-color: $theme-primary;
+
+      &::after {
+        border-right-color: $theme-primary;
+        border-left-color: $theme-primary;
+      }
+
+      .step {
+        color: $text-color;
+      }
+    }
+
+    &.disabled {
+      color: $grey-500;
+      background-color: $grey-200;
+
+      &::after {
+        border-right-color: $grey-200;
+        border-left-color: $grey-200;
+      }
+
+      .step {
+        color: $grey-500;
+      }
+    }
+
+    &.success {
+      color: #fff;
+      background-color: $brand-success;
+
+      &::after {
+        border-right-color: $brand-success;
+        border-left-color: $brand-success;
+      }
+    }
+
+    &.error {
+      color: #fff;
+      background-color: $brand-danger;
+
+      &::after {
+        border-right-color: $brand-danger;
+        border-left-color: $brand-danger;
+      }
+    }
+
+    a {
+      display: inline-block;
+      padding: 0;
+      color: currentColor;
+
+      &:hover,
+      &:focus {
+        background-color: transparent !important;
+        color: currentColor !important;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .step {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    color: $text-color;
+    line-height: 16px;
+    font-size: 0.75em;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    z-index: 3;
+  }
+
+
+  @media screen and (min-width: $screen-md-min) {
+    margin-left: -5px;
+    margin-right: -5px;
+
+    li {
+      font-size: 1.4rem;
+      padding: 10px 5px 10px 23px;
+
+      &::before,
+      &::after  {
+        content: '';
+        border-left-width: 16px;
+        border-top-width: 20px;
+        border-bottom-width: 20px;
+      }
+    }
+
+    .step {
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+.nav-workflow-lg {
+  li {
+    padding: 6px 5px 6px 20px;
+
+    &:before,
+    &:after {
+      border-left-width: 15px;
+      border-top-width: 20px;
+      border-bottom-width: 20px;
+    }
+  }
+
+
+  @media screen and (min-width: $screen-md-min) {
+    li {
+      min-height: 80px;
+      padding: 8px 5px 8px 30px;
+
+      &:before,
+      &:after {
+        border-left-width: 23px;
+        border-top-width: 40px;
+        border-bottom-width: 40px;
+      }
+    }
+  }
+}
+
+.nav-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+
+  li {
+    flex: 1;
+    display: inline-block;
+    margin: 2px;
+
+    &::before,
+    &::after {
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+  }
+
+  &::before,
+  &::after {
+    display: none;
+  }
+
+  @media screen and (min-width: $screen-md-min) {
+    li {
+      margin: 2px 5px;
+    }
+  }
+}
+
+.nav-workflow-light {
+  li {
+    padding: 0;
+    text-align: center;
+    min-height: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid $grey-600;
+    flex: 0 1 auto;
+
+    &:before {
+      display: none;
+    }
+
+    &:after {
+      border-top: none;
+      border-right: none;
+      border-bottom: 2px solid $grey-600;
+      border-left: none;
+      top: 16px;
+      width: 6px;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+
+    &.active {
+      .step {
+        color: $theme-primary-text;
+      }
+    }
+
+    &.success,
+    &.error {
+      .step {
+        color: #fff;
+      }
+    }
+  }
+
+  .step {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-right: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+    font-size: 1.1em;
+    cursor: default;
+  }
+
+
+  @media screen and (min-width: $screen-md-min) {
+    li {
+      width: 40px;
+      height: 40px;
+
+      &::after {
+        top: 19px;
+        width: 11px;
+      }
+    }
+
+    .step {
+      line-height: 40px;
+    }
+  }
+}
+
+/*
+Vertical workflow
+
+In this compact vertical workflow the position and step name are displayed. Step numbers are optional.
+
+Markup: ../../markup/workflow-vertical.html
+
+Styleguide 2.6.2
+*/
+.nav-workflow.nav-stacked {
+  margin-left: 10px;
+
+  li {
+    text-align: left;
+    background-color: transparent;
+    color: $text-color;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    height: auto;
+    min-height: 0;
+    margin-left: 5px;
+    margin-top: 0;
+    border-left: 2px solid $grey-600;
+    height: auto;
+    display: inherit;
+
+    &:after {
+      border: none;
+      background-color: transparent;
+      width: 20px;
+      height: 15px;
+      left: 0;
+      margin-left: -11px;
+    }
+
+    &:first-child::after {
+      background-color: #fff;
+    }
+
+    &:last-child::after {
+      display: block;
+      background-color: #fff;
+      top: auto;
+      bottom: 0;
+    }
+
+    &:before {
+      border: 1px solid $grey-600;
+      width: 20px;
+      height: 20px;
+      background-color: $theme-accent;
+      top: 50%;
+      margin-top: -10px;
+      margin-left: -11px;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    &.active {
+      color: $theme-primary-dark;
+      background-color: transparent;
+
+      &::before {
+        background-color: $theme-primary;
+      }
+
+      .step {
+        color: $theme-primary-text;
+      }
+    }
+
+    &.disabled {
+      color: $grey-500;
+      background-color: transparent;
+
+      &::before {
+        background-color: $grey-200;
+      }
+
+      .step {
+        color: $grey-500;
+      }
+    }
+  }
+  
+  .step {
+    position: absolute;
+    left: -11px;
+    background-color: transparent;
+  }
+}
+
+
+/*
+Skip links
+
+<p>Skip links are links to the most important section of the page : navigation, content, search and settings. They allow user to jump directly to a specific section of the page.
+By default, skip links are not visible, they appear when they have the focus.</p>
+<p>They are accessible through keyboard navigation using <code>tab</code>. Skip links should be the first child(s) of the <code>body</code> element.</p>
+
+Markup: ../../markup/skip-links.html
+
+Styleguide 2.7
+*/
+.skip-link {
+  position: absolute;
+  top: -9rem;
+  left: 0;
+  padding: .5rem;
+  background-color: $grey-700;
+  z-index: 999;
+
+  &:focus {
+    top: 0;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  /* Hide them from styleguide */
+  .kss-modifier & {
+    display: none !important;
+  }
+}
+
+
+/*
+Vertical navigation
+
+<p>This vertical navigation can manage until three level. The second and third level open in the right.</p>
+<p>You need the <code>project/js/jquery-accessible-subnav-dropdown.js</code> and <code>project/js/jquery.menu-aim.js</code> plugin's.</p>
+<p>You can also add a title to this navigation. Don't forget to make a relation between navigation and title using the <code>id</code> and the <code>aria-labelledby</code> attributes.</p>
+
+Markup: ../../markup/nav-vertical.html
+
+Styleguide 2.8
+*/
+
+// Title
+.nav-vertical-title {
+  padding: .6rem 1.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  background-color: $theme-primary;
+  color: #fff;
+  margin-top: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: default;
+}
+
+
+// List
+.nav-vertical-list {
+  list-style-type: none;
+  padding-left: 0;
+  border: 1px solid $grey-400;
+  margin-bottom: 0;
+  background-color: $grey-200;
+
+  li {
+    position: relative;
+
+    + li {
+      border-top: 1px solid $grey-400;
+    }
+  }
+
+  > .has-submenu::after {
+    content: "\f054";
+    font-family: hr-icon !important;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    font-size: 1em;
+    transform: translateY(-50%);
+    opacity: .25;
+  }
+
+  a {
+    display: block;
+    padding: .6rem 1.5rem;
+    border-left: 3px solid transparent;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      background-color: #fff;
+    }
+  }
+
+  // Second level
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    border: 1px solid $grey-400;
+    margin-bottom: 0;
+    background-color: $grey-200;
+    margin-top: -1px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    z-index:  500;
+    width: 100%;
+    padding-left: 0;
+
+    > .has-submenu > a {
+      padding: .6rem 1.5rem;
+      font-size: 1.2rem;
+      margin-bottom: 0;
+      background-color: $theme-primary;
+      color: #fff;
+      margin-top: 0;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: default;
+    }
+
+    // Third level
+    ul {
+      position: static;
+      border: 0;
+
+      li {
+        border-top: 0;
+      }
+    }
+  }
+
+
+  // State
+  .active {
+    > a {
+      color: $theme-primary-dark;
+      border-left-color: $theme-primary-dark;
+      background-color: #fff;
+    }
+  }
+  [data-visually-hidden="true"] {
+    display: none;
+  }
+
+  [data-visually-hidden="false"] {
+    display: block;
+  }
+}

@@ -1,0 +1,16 @@
+/* ------- Theme "Zen" ------- */
+
+@import "../var-colors";
+
+$theme-primary-dark:  $lime-800;  $theme-primary-dark-text:   $lime-800-text;
+$theme-primary:       $lime-500;  $theme-primary-text:        $lime-500-text;
+$theme-secondary:     $grey-700;  $theme-secondary-text:      $grey-700-text;
+$theme-accent:        $lime-200;  $theme-accent-text:         $lime-200-text;
+$theme-background:    $grey-100;  $theme-background-text:     $grey-100-text;
+$theme-light:         $lime-50;   $theme-light-text:          $lime-50-text;
+
+$theme-text-color:  $grey-900;    $theme-link-color: $theme-primary-dark;   $theme-link-hover-color: $lime-900;
+$box-bg:            #fff;
+$gradient-body:     true;         $gradient-banner: true;
+
+@import "hr-theme";

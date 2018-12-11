@@ -1,0 +1,16 @@
+/* ------- Theme "Optimist" ------- */
+
+@import "../var-colors";
+
+$theme-primary-dark:  $orange-800;    $theme-primary-dark-text:   $orange-800-text;
+$theme-primary:       $orange-A400;   $theme-primary-text:        $orange-A400-text;
+$theme-secondary:     $grey-700;      $theme-secondary-text:      $grey-700-text;
+$theme-accent:        $orange-100;    $theme-accent-text:         $orange-100-text;
+$theme-background:    $grey-100;      $theme-background-text:     $grey-100-text;
+$theme-light:         $orange-50;     $theme-light-text:          $orange-50-text;
+
+$theme-text-color:    $grey-900;      $theme-link-color: $theme-primary-dark;   $theme-link-hover-color: $orange-900;
+$box-bg:              #fff;
+$gradient-body:       true;           $gradient-banner: true;
+
+@import "hr-theme";

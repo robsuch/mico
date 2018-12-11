@@ -1,0 +1,16 @@
+/* ------- Theme "Rainy day" ------- */
+
+@import "../var-colors";
+
+$theme-primary-dark:  $blue-grey-700;  $theme-primary-dark-text:   $blue-grey-700-text;
+$theme-primary:       $blue-grey-500;  $theme-primary-text:        $blue-grey-500-text;
+$theme-secondary:     $grey-700;       $theme-secondary-text:      $grey-700-text;
+$theme-accent:        $blue-grey-100;  $theme-accent-text:         $blue-grey-100-text;
+$theme-background:    $grey-100;       $theme-background-text:     $grey-100-text;
+$theme-light:         $blue-grey-50;   $theme-light-text:          $blue-grey-50-text;
+
+$theme-text-color:  $grey-900;      $theme-link-color: $theme-primary-dark;   $theme-link-hover-color: $blue-grey-800;
+$box-bg:            #fff;
+$gradient-body:     true;           $gradient-banner: true;
+
+@import "hr-theme";

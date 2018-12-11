@@ -1,0 +1,12 @@
+org/flix/tools/documents/message/tool/IhrmMessageSource$1.class
+org/flix/tools/documents/dao/impl/LabelDAOImpl.class
+org/flix/tools/documents/model/Label.class
+org/flix/tools/documents/dao/impl/GenericDAOImpl.class
+org/flix/tools/documents/dao/LabelDAO.class
+org/flix/tools/documents/dao/impl/AbstractGenericDAOImpl.class
+org/flix/tools/documents/message/tool/IhrmMessageSource.class
+org/flix/tools/documents/message/tool/IhrmMessageSource$MyObj.class
+org/flix/tools/documents/dao/GenericDAO.class
+org/flix/tools/documents/web/controller/MainController$DocFields.class
+org/flix/tools/documents/web/controller/MainController.class
+org/flix/tools/documents/web/controller/MainController$1.class

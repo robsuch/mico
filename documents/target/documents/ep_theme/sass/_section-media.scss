@@ -1,0 +1,922 @@
+/* ------- Media section ------- */
+
+/*
+Icons
+
+A set of icons directly usable in your application.<br />
+<div class="alert alert-warning no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__exclamation-triangle hr-icon-38 text-warning"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Accessibility</strong><br />
+    To make icons accessible to everyone, you have to make sure to add some describing text.<br />
+    It can be text displayed directly on screen (like icons in the banner), or hidden text for screen reader (by using the "sr-only" class).
+  </div>
+</div>
+
+Styleguide 5.1
+*/
+
+/*
+List of icons
+
+Icons are stored in a font. Icon set has been build using <a href="https://icomoon.io/">Icomoon</a>.<br />
+The following list displays the icons, and the corresponding identifiers.
+
+Styleguide 5.1.1
+*/
+
+/*
+User icons (4)
+
+Markup: ../../markup/icons-list.html
+
+user - user
+users - users
+user-plus - user-plus
+user-minus - user-minus
+
+Styleguide 5.1.1.1
+*/
+
+/*
+Direction icons (12)
+
+Markup: ../../markup/icons-list.html
+
+arrow-up - arrow-up
+arrow-right - arrow-right
+arrow-down - arrow-down
+arrow-left - arrow-left
+chevron-up - chevron-up
+chevron-right - chevron-right
+chevron-down - chevron-down
+chevron-left - chevron-left
+chevron-circle-up - chevron-circle-up
+chevron-circle-right - chevron-circle-right
+chevron-circle-down - chevron-circle-down
+chevron-circle-left - chevron-circle-left
+
+Styleguide 5.1.1.2
+*/
+
+/*
+Forms icons (7)
+
+Markup: ../../markup/icons-list.html
+
+plus - plus
+minus - minus
+asterisk - asterisk
+check - check
+check-square-o - check-square-o
+close - close
+ban - ban
+
+Styleguide 5.1.1.3
+*/
+
+/*
+Actions icons (10)
+
+Markup: ../../markup/icons-list.html
+
+cut - cut
+copy - copy
+pencil - pencil
+download - download
+paperclip - paperclip
+trash-o - trash-o
+print - print
+floppy-o - floppy-o
+search - search
+tint - tint
+
+Styleguide 5.1.1.4
+*/
+
+/*
+Text editor icons (13)
+
+Markup: ../../markup/icons-list.html
+
+align-left - align-left
+align-center - align-center
+align-right - align-right
+align-justify - align-justify
+ellipsis-h - ellipsis-h
+text-height - text-height
+bold - bold
+th - th
+th-list - th-list
+square - square
+bars - bars
+sort-alpha-asc - sort-alpha-asc
+sort-alpha-desc - sort-alpha-desc
+
+Styleguide 5.1.1.5
+*/
+
+/*
+File type icons (16)
+
+Markup: ../../markup/icons-list.html
+
+calendar - calendar
+calendar-month - calendar-month
+calendar-week - calendar-week
+calendar-day - calendar-day
+file-text-o - file-text-o
+file-pdf-o - file-pdf-o
+file-word-o - file-word-o
+file-excel-o - file-excel-o
+file-code-o - file-code-o
+file-image-o - file-image-o
+file-powerpoint-o - file-powerpoint-o
+pie-chart - pie-chart
+line-chart - line-chart
+film - film
+image - image
+book - book
+
+Styleguide 5.1.1.6
+*/
+
+/*
+Navigation icons (3)
+
+Markup: ../../markup/icons-list.html
+
+home - home
+sitemap - sitemap
+map-signs - map-signs
+
+Styleguide 5.1.1.7
+*/
+
+/*
+Web icons (10)
+
+Markup: ../../markup/icons-list.html
+
+sphere - sphere
+feed - feed
+network - network
+external-link-square - external-link-square
+sign-in - sign-in
+sign-out - sign-out
+tag - tag
+bookmark - bookmark
+thumb-tack - thumb-tack
+chain - chain
+
+Styleguide 5.1.1.8
+*/
+
+/*
+Status icons (12)
+
+Markup: ../../markup/icons-list.html
+
+info-circle - info-circle
+question-circle - question-circle
+exclamation-triangle - exclamation-triangle
+info - info
+question - question
+exclamation - exclamation
+bell - bell
+bell-slash - bell-slash
+lock - lock
+unlock - unlock
+eye - eye
+eye-slash - eye-slash
+
+Styleguide 5.1.1.9
+*/
+
+/*
+Communication icons (6)
+
+Markup: ../../markup/icons-list.html
+
+phone - phone
+envelope - envelope
+comment - comment
+comment-o - comment-o
+share-square-o - share-square-o
+address-book - address-book
+
+Styleguide 5.1.1.10
+*/
+
+/*
+System and tools icons (6)
+
+Markup: ../../markup/icons-list.html
+
+calculator - calculator
+database - database
+cog - cog
+wrench - wrench
+power-off - power-off
+keyboard - keyboard
+
+Styleguide 5.1.1.11
+*/
+
+/*
+Emotion icons (17)
+
+Markup: ../../markup/icons-list.html
+
+smile-o - smile-o
+meh-o - meh-o
+frown-o - frown-o
+heart - heart
+star-o - star-o
+star - star
+magic - magic
+umbrella - umbrella
+bolt - bolt
+leaf - leaf
+cloud - cloud
+thumbs-o-up - thumbs-o-up
+thumbs-o-down - thumbs-o-down
+hand-peace-o - hand-peace-o
+light-up - light-up
+lightbulb-o - lightbulb-o
+filter_vintage - filter_vintage
+
+Styleguide 5.1.1.12
+*/
+
+/*
+Structure icons (5)
+
+Markup: ../../markup/icons-list.html
+
+folder - folder
+folder-open - folder-open
+cube - cube
+cubes - cubes
+puzzle-piece - puzzle-piece
+
+Styleguide 5.1.1.13
+*/
+
+/*
+Finance icons (4)
+
+Markup: ../../markup/icons-list.html
+
+eur - eur
+credit-card - credit-card
+balance-scale - balance-scale
+bank - bank
+
+Styleguide 5.1.1.14
+*/
+
+/*
+Display/View icons (7)
+
+Markup: ../../markup/icons-list.html
+
+expand - expand
+compress - compress
+arrows-alt - arrows-alt
+desktop - desktop
+search-plus - search-plus
+search-minus - search-minus
+refresh - refresh
+
+Styleguide 5.1.1.15
+*/
+
+/*
+Various icons (9)
+
+Markup: ../../markup/icons-list.html
+
+subway - subway
+camera - camera
+graduation-cap2 - graduation-cap2
+flask - flask
+clock-o - clock-o
+medkit - medkit
+briefcase - briefcase
+coffee - coffee
+birthday-cake - birthday-cake
+
+Styleguide 5.1.1.16
+*/
+
+/*
+How to use icons
+
+To insert an icon wherever you want in your application, add an empty &lt;span&gt; and put the CSS class corresponding to the icon. This class should be prefixed by "hr-icon__" (see examples below).
+
+Markup: ../../markup/icons-how-to.html
+
+Styleguide 5.1.2
+*/
+
+/*
+Specific usage
+
+To maintain coherence between all applications, the same icons should be used for the same actions.<br />
+Icon size may vary according to application's needs, but color should follow the same rules as buttons (green to add an item, red to remove one).<br />
+If an icon requires an action from the user, it should be put in a button.<br />
+Apart from the obvious icon usage (search, cut, home...), here are some more specific usages of icons for predefined action/context.
+
+Markup: ../../markup/icons-usage.html
+
+Styleguide 5.1.3
+*/
+
+/*
+Icon size
+
+As icons are in fact font characters, their size will adapt to the font size.<br />
+Here are also some predefined sizes.
+
+Markup: ../../markup/icons-size.html
+
+hr-icon-12 - 12px
+hr-icon-14 - 14px
+hr-icon-20 - 20px
+hr-icon-24 - 24px
+hr-icon-28 - 28px
+hr-icon-38 - 38px
+hr-icon-48 - 48px
+hr-icon-60 - 60px
+hr-icon-80 - 80px
+hr-icon-100 - 100px
+
+Styleguide 5.1.4
+*/
+.hr-icon-12 { 
+  font-size: 12px !important;
+  width: 21px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-14 { 
+  font-size: 14px !important;
+  width: 23px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-20 { 
+  font-size: 20px !important;
+  width: 29px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-24 { 
+  font-size: 24px !important;
+  width: 33px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-28 { 
+  font-size: 28px !important;
+  width: 37px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-38 { 
+  font-size: 38px !important;
+  width: 47px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-48 { 
+  font-size: 48px !important;
+  width: 57px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-60 { 
+  font-size: 60px !important;
+  width: 69px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-80 { 
+  font-size: 80px !important;
+  width: 89px;
+  text-align: center;
+  display: inline-block; 
+}
+
+.hr-icon-100 { 
+  font-size: 100px !important;
+  width: 109px;
+  text-align: center;
+  display: inline-block; 
+}
+
+
+/*
+Icon color
+
+Color of icon will adapt to text color.<br />
+You can also use provided <a href="section-1.html#kssref-1-2-2">color helpers</a>.
+
+Markup: ../../markup/icons-color.html
+
+Styleguide 5.1.5
+*/
+
+/*
+Icon label
+
+Use this label to display information directly related to the icon (like number of notification, number of items selected, etc.).<br />
+Icon has to be put in a button (or a button link) for better display.<br />
+Size of label depends on the size of the button.
+
+Markup: ../../markup/icons-label.html
+
+Styleguide 5.1.6
+*/
+.btn .label {
+  @extend .text-small-caps;
+  top: 5px;
+  left: 50%;
+  margin-left: 10%;
+  position: absolute;
+  padding: 1px 2px;
+}
+
+.btn .label-lg {
+  font-size: 0.9em;
+  padding: 2px 3px;
+  margin-left: 5%;
+}
+
+/*
+Thumbnails
+
+Provide default thumbnail to enhance image display.<br />
+<div class="alert alert-warning no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__exclamation-triangle hr-icon-38 text-warning"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Accessibility</strong><br />
+    To make images accessible to everyone, you have to make sure to add describing alternative text.
+  </div>
+</div>
+
+Markup: ../../markup/thumbnails.html
+
+Styleguide 5.2
+*/
+
+/*
+Tiles
+
+Provide modern, tile-based navigation links.<br />
+You can add an extra description if needed (displayed in two possible ways). This description can't contains links.<br />
+Light tiles can have any size too.<br />
+If needed, you can remove the default icon transparency by adding class "tiles-opaque". <br />
+You can also add a notification on each tile.
+
+Markup: ../../markup/tiles.html
+
+.tiles-xs - Tiny tiles
+.tiles-sm - Small tiles
+. - Default tiles
+.tiles-lg - Large tiles
+.tiles-light - Tiles with no border
+.tiles-opaque - Tiles with opaque icons
+
+Styleguide 5.3
+*/
+.tiles {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tile {
+	height: $tile-height;
+  position: relative;
+  margin: 0 -12px 6px -12px;
+	background-color: $grey-50;
+  border: 1px solid $grey-200;
+	display: block;
+	padding: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  
+  .tile__notification {
+  	position: absolute;
+  	top: 2.8rem;
+  	right: 1.5rem;
+  }
+}
+
+.tile:hover {
+	text-decoration: none;
+  background-color: $theme-accent;
+}
+
+.tile__title {
+	font-size: 1.15em;
+	color: $text-color;
+	text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+.tile:hover .tile__title {
+  color: $theme-accent-text;
+}
+
+.tile__icon {
+  font-size: $tile-icon-size;
+  position: absolute;
+  top: 50px;
+  right: 15px;
+  color: $theme-primary;
+  opacity: 0.5;
+  z-index: 0;
+  text-shadow: -1px -1px 0px rgba(0,0,0,0.3);
+
+  &.text-muted {
+    color: $text-muted; 
+  }
+
+  &.text-primary {
+    color: $state-primary-text; 
+  }
+  
+  &.text-success {
+    color: $state-success-text;
+  }
+  
+  &.text-info {
+    color: $state-info-text;
+  }
+  
+  &.text-warning {
+    color: $state-warning-text;
+  }
+  
+  &.text-danger {
+    color: $state-danger-text;
+  }
+}
+
+.tile:hover .tile__icon {
+  color: $theme-accent-text;
+  opacity: 0.3;
+}
+
+.tile__description {
+  position: absolute;
+  top: $tile-height;
+  height: $tile-height - 20;
+  width: 100%;
+  background-color: #fafafa;
+  overflow: hidden;
+  left: 0;
+  padding: 5px 20px 0 20px;
+  border-top: 2px solid $theme-primary;
+  opacity: 0;
+  z-index: 1;
+  transition: top 0s, opacity 0.2s;
+  transition-delay: 0.3s, 0.1s;
+  color: $theme-accent-text;
+}
+
+.tile:hover .tile__description {
+  color: $theme-accent-text;
+  top: 20px;
+  opacity: 1;
+  transition: top 0.4s, opacity 0.4s;
+  transition-delay: 0.7s, 0.7s;
+}
+
+.tile-flip,
+.tile-flip:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.tile__front,
+.tile__back {
+  border: 1px solid $grey-200;
+  backface-visibility: hidden;
+  padding: 20px;
+  transition: transform 0.4s ease 0s;
+  transition-delay: 0.1s;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.tile__front {
+  background-color: $grey-50;
+}
+
+.tile__back {
+  color: $theme-accent-text;
+  background-color: $theme-accent;
+  transform: rotateX(-180deg);
+}
+
+.tile-flip:hover {
+  .tile__front {
+    background-color: $theme-accent;
+    transform: rotateX(-180deg);
+    transition: transform 0.4s ease 0s;
+    transition-delay: 0.7s;
+  }
+
+  .tile__back {
+    transform: rotateX(0deg);
+    transition: transform 0.4s ease 0s;
+    transition-delay: 0.7s;
+  }
+}
+
+.tiles-lg {
+  .tile {
+    height: $tile-lg-height;
+    padding: 25px;
+  }
+
+  .tile__title {
+    font-size: 1.25em;
+  }
+
+  .tile__icon {
+    top: 85px;
+    font-size: $tile-lg-icon-size;
+  }
+
+  .tile__description {
+    top: $tile-lg-height;
+    height: $tile-lg-height - 25;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .tile:hover .tile__description {
+    top: 25px;
+  }
+
+  .tile__back {
+    padding: 20px;
+  }
+}
+
+.tiles-sm {
+  .tile {
+    height: $tile-sm-height;
+    padding: 15px;
+  }
+
+  .tile__icon {
+    top: 32px;
+    right: 10px;
+    font-size: $tile-sm-icon-size;
+  }
+
+  .tile__description {
+    top: $tile-sm-height;
+    height: $tile-sm-height - 10;
+    padding-top: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .tile:hover .tile__description {
+    top: 10px;
+  }
+
+  .tile__back {
+    padding: 12px;
+  }
+}
+
+.tiles-xs {
+  .tile {
+    height: $tile-xs-height;
+    padding: 0;
+  }
+
+  .tile__title {
+    display: block;
+    position: relative;
+    text-align: center;
+    top: 45px;
+    font-weight: normal;
+    font-size: 1em;
+  }
+
+  .tile__icon {
+    margin-right: -20px;
+    right: 50%;
+    top: 5px;
+    width: $tile-xs-icon-size;
+    font-size: $tile-xs-icon-size;
+    text-align: center;
+  }
+
+  .tile__description {
+    top: $tile-xs-height;
+    height: $tile-xs-height;
+    padding-top: 6px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .tile:hover .tile__description {
+    top: 0px;
+  }
+
+  .tile__front {
+    padding: 0;
+  }
+
+  .tile__back {
+    padding: 6px;
+  }
+}
+
+.tiles-light {
+  .tile,
+  .tile__front,
+  .tile__back {
+    background-color: transparent;
+    border-color: transparent;
+    
+    &:hover {
+      background-color: $theme-accent;
+      color: $theme-accent-text;
+    }
+  }
+}
+
+.tiles-opaque {
+  .tile:hover .tile__icon,
+  .tile__icon {
+    opacity: 1;
+  }
+}
+
+/* Tiles with no height */
+.tiles-auto {
+	.tile {
+		height: auto;
+	}
+}
+
+
+/* Tile favorite */
+.tile-favorite {
+  height: 100px;
+  position: relative;
+  background-color: #fafafa;
+  border: 1px solid #eee;
+  display: block;
+  padding: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+  margin-bottom: 20px;
+
+  .sub-content {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0; 
+    bottom: 0;
+    padding-left: 20px;
+    padding-top: 20px;
+
+    .title {
+      font-size: 1.15em;
+      color: #212121;
+      text-decoration: none;
+      font-weight: 700;
+      max-width: 75%;
+    }
+ 
+    &:hover {
+      text-decoration: none;
+      background-color: $theme-accent; 
+    }
+  }
+
+  .sub-icon {
+    border: 0;
+    background-color: transparent;
+    position: absolute; 
+    right: 20px;
+    top: 10px;
+    z-index: 10;
+    padding: 0;
+    opacity: 0.6;
+    font-size: 32px;
+    color: $theme-primary;
+    text-shadow: -1px -1px 0 rgba(0,0,0,.3);
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+/*
+Charts
+
+Javascript based charts to display data in different ways:<br />
+<ul class="list"><li>Line</li><li>Bar</li><li>Radar</li><li>Polar Area</li><li>Pie & Doughnut</li></ul>
+It relies on <a href="http://www.chartjs.org/">charts.js</a> (version 2.1.3). For each display type, there are lots of possible customizations (colors, sizes, information displayed, ...).<br />
+You can find more examples and documentation on the <a href="http://www.chartjs.org/docs/">official site</a>.<br />
+<div class="alert alert-info no-margin-bottom" role="alert">
+  <div class="alert-icon">
+    <span class="hr-icon__info-circle hr-icon-38 text-info"></span>
+  </div>
+  <div class="alert-body">
+    <strong>Charts</strong><br />
+    To use charts in your page, make sure to include <strong>Chart.min.js</strong> (commented by default in skeleton page).
+  </div>
+</div>
+
+Styleguide 5.4
+*/
+
+/*
+Line charts
+
+Charts with one or more dots and lines.
+
+Markup: ../../markup/charts-line.html
+
+Styleguide 5.4.1
+*/
+
+/*
+Bar Charts
+
+Charts with data displayed as bars.
+
+Markup: ../../markup/charts-bar.html
+
+Styleguide 5.4.2
+*/
+
+/*
+Pie Charts
+
+Charts with data displayed as pie (or Doughnut).
+
+Markup: ../../markup/charts-pie.html
+
+Styleguide 5.4.3
+*/
+
+
+
+/*
+Favicons
+
+Favicons are available for some applications, here is the list with the associated color and the folder name for each:
+<ul class="list">
+<li>People | #ef6c00 | <code>People</code></li>
+<li>AC People | #ef6c00 | <code>AC</code></li>
+<li>APA People | #ef6c00 | <code>APA</code></li>
+<li>HRM People Management | #00897b | <code>HRMpeople</code></li>
+<li>HR Portal | #0c4da2 | <code>HRPortal</code></li>
+<li>Papyrus | #66bb6a | <code>Papyrus</code></li>
+<li>T People | #ef6c00 | <code>RPeople</code></li>
+</ul>
+
+<p>If you are only looking for the images, they are available in <code>project/images/favicon</code> in different sizes.</p>
+<p>Your application is not in this list? Please <a href="mailto:ana.juste@europarl.europa.eu?cc=chadia.berkane@ext.europarl.europa.eu&subject=Favicon%20requirement">contact us</a>.</p>
+
+
+<img src="../project/images/favicon/favicons-preview.png" alt="Preview of available favicons">
+
+Markup: ../../markup/favicons.html
+
+Styleguide 5.5
+*/

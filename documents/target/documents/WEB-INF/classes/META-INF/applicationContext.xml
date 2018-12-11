@@ -1,0 +1,68 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/tx 
+	    http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd ">
+
+
+<context:annotation-config/>
+	<mvc:annotation-driven />
+	<context:component-scan base-package="org.flix.tools.documents"/>
+
+    
+	<!-- Enable Spring AOP support -->
+	<aop:aspectj-autoproxy/>
+
+<util:properties id="applicationProperties" location="file:$classpath:/resources/application.properties"/>        
+<context:property-placeholder		location="file:$classpath:/resources/application.properties		ignore-resource-not-found="false"/>
+
+
+	<!-- JDBC transaction manager -->
+	<tx:annotation-driven order="1" transaction-manager="transactionManager"/>
+	
+	
+	<!-- JNDI datasource -->
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="#{applicationProperties['db.jndi.name']}"/>
+		<property name="resourceRef" value="true"/>
+	</bean>
+
+	<!-- The JPA transaction manager -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="emf"/>
+	</bean>
+
+	<!-- The JPA Entity Manager -->
+	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="persistenceXmlLocation" value="classpath*:META-INF/persistence.xml"/>
+		<property name="persistenceUnitName" value="#{applicationProperties['db.datasource']}"/>
+		<property name="jpaDialect">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
+		</property>
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+		</property>
+	</bean>
+	
+	<!-- Persistence exception transaction used for DAO layer JPA exceptions translation -->
+	<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+
+	
+
+</beans>
