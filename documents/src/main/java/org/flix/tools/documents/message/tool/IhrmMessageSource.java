@@ -21,6 +21,7 @@ public class IhrmMessageSource extends ReloadableResourceBundleMessageSource{//A
 	@Transactional
 	@Override
 	protected MessageFormat resolveCode(String code, Locale locale) {
+		
 		MessageFormat format;
 		MyObj myObj = new MyObj();//myDao.findByCode(code);
 		LabelDAO labelDAO = new LabelDAOImpl();
