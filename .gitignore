@@ -1,1 +1,4 @@
 /.metadata/
+*.class
+documents/target/classes/org/flix/tools/documents/message/tool/IhrmMessageSource$MyObj.class
+*.class
