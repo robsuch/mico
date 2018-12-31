@@ -7,9 +7,18 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
 
+<!-- 	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>file:${classpath}/etc/log4j.properties</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jExposeWebAppRoot</param-name>
+		<param-value>false</param-value>
+	</context-param> -->
+	
 	<!-- Datasouce -->
 	<resource-ref>
-		<description>APA Datasource</description>
+		<description>Doc Datasource</description>
 		<res-ref-name>jdbc/documentsds</res-ref-name>
 		<res-type>javax.sql.DataSource</res-type>
 		<res-auth>Container</res-auth>
@@ -19,6 +28,9 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:META-INF/applicationContext.xml</param-value>
 	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	
 		<servlet>
 		<servlet-name>documents</servlet-name>

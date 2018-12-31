@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/util 
+		http://www.springframework.org/schema/util/spring-util-3.2.xsd
+		http://www.springframework.org/schema/tx 
+       	http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/aop 
+       	http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+	<!-- Annotation configuration -->
+    <context:annotation-config />
+    <context:component-scan base-package="org.flix.tools.documents">
+    	
+	</context:component-scan>
+
+    
+    <!-- Enable Spring AOP support (reminder: if uncommented tests break) -->
+<!--     <aop:aspectj-autoproxy /> -->
+    
+    <!-- JDBC transaction manager --> 
+	<tx:annotation-driven order="1" transaction-manager="transactionManager"/>
+	
+
+    
+    <!-- 
+    	- Properties configuration 
+    	- usage: #{applicationProperties['file.upload.size.limit']}
+    	
+    	classpath:application.properties
+    -->
+    <util:properties id="applicationProperties" location="classpath:application.properties" />
+
+ 	<context:property-placeholder 
+ 		location="
+ 				classpath:application.properties"
+ 		ignore-resource-not-found="true"/>
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+<!--         <property name="url" value="jdbc:h2:mem:test;MODE=Oracle;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/> -->
+        <property name="url" value="jdbc:mysql://localhost:3306/calendar" />
+        <property name="username" value="root"/>
+        <property name="password" value="changeme"/>
+    </bean>
+    
+    
+    <!-- The JPA transaction manager -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+   		<property name="entityManagerFactory" ref="emf"/>
+   </bean>
+
+  	<!-- The JPA Entity Manager -->
+   	<bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+	  	<property name="dataSource" ref="dataSource"/>
+	  	<property name="persistenceXmlLocation" value="classpath*:persistence.xml"></property>
+	  	<property name="persistenceUnitName" value="documentsds-test" />
+	  	<property name="jpaDialect">
+      		<bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect"/>
+      	</property>
+	  	<property name="jpaVendorAdapter">
+        	<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+      	</property>
+<!--       	<property name="jpaProperties"> -->
+<!-- 			<props> -->
+<!-- 				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop> -->
+<!-- 			</props> -->
+<!-- 		</property> -->
+   </bean>
+   
+   <!-- Persistence exception transaction used for DAO layer JPA exceptions translation -->
+   <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+   
+	
+
+</beans>

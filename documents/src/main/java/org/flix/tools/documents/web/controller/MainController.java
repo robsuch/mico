@@ -4,6 +4,9 @@ package org.flix.tools.documents.web.controller;
 import java.util.List;
 import java.util.Locale;
 
+import org.flix.tools.documents.dao.impl.GenericDAOImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -15,9 +18,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MainController {
+	private static final Logger LOG = LoggerFactory.getLogger(MainController.class);
+
 	
 	@RequestMapping("/")
 	public ModelAndView mainCall() {
+		LOG.info("MainController mapping /");
 		ModelAndView mav = new ModelAndView("main");
 		return mav;
 	}

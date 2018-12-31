@@ -8,23 +8,30 @@ import javax.transaction.Transactional;
 import org.flix.tools.documents.dao.LabelDAO;
 import org.flix.tools.documents.dao.impl.LabelDAOImpl;
 import org.flix.tools.documents.model.Label;
+import org.flix.tools.documents.web.controller.MainController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.support.AbstractMessageSource;
 import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 
 
 public class IhrmMessageSource extends ReloadableResourceBundleMessageSource{//AbstractMessageSource {
-    
-	/*@Autowired
+	private static final Logger LOG = LoggerFactory.getLogger(IhrmMessageSource.class);
+	@Autowired
 	private LabelDAO labelDAO;
-	*/
-	@Transactional
+	
+	@Value("#{applicationProperties['db.datasource']}")
+	private String dBdatasource;
+	
+
 	@Override
+	@Transactional
 	protected MessageFormat resolveCode(String code, Locale locale) {
-		
+		LOG.info(dBdatasource);
 		MessageFormat format;
-		MyObj myObj = new MyObj();//myDao.findByCode(code);
-		LabelDAO labelDAO = new LabelDAOImpl();
+		MyObj myObj = new MyObj();
 		Label label = labelDAO.findLabelByCode(code);
 		myObj.setId(label.getId());
         myObj.setValue(label.getLabelValue());
@@ -41,11 +48,7 @@ public class IhrmMessageSource extends ReloadableResourceBundleMessageSource{//A
 	}
 	
     protected String resolveCodeWithoutArguments(String code, Locale locale) {
-
-      //  MyObj myObj = myDao.findByCode(code);
-
-		MyObj myObj = new MyObj();//myDao.findByCode(code);
-		LabelDAO labelDAO = new LabelDAOImpl();
+		MyObj myObj = new MyObj();
 		Label label = labelDAO.findLabelByCode(code);
 		myObj.setId(label.getId());
         myObj.setValue(label.getLabelValue());

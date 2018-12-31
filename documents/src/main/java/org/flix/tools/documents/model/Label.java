@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+import javax.persistence.Id;
 
 @Entity(name="Label")
 //@Table(name = "APPS.XXHR_SEARCH_PEOPLE_V")
@@ -14,18 +15,19 @@ public class Label implements java.io.Serializable {
 
 	private static final long serialVersionUID = 8765016103450361311L;
 
-	@Column(name = "id")
+	
 	private Integer Id;
 	
-	@Column(name = "labal_code")
+
 	private String labelCode;
 	
-	@Column(name = "label_value")
+
 	private String labelValue;
 		
-	@Column(name = "label_language")
 	private String labelLanguage;
 
+	@Id
+	@Column(name = "id")
 	public Integer getId() {
 		return Id;
 	}
@@ -33,7 +35,7 @@ public class Label implements java.io.Serializable {
 	public void setId(Integer id) {
 		Id = id;
 	}
-
+	@Column(name = "label_code" , insertable = false, updatable = false)
 	public String getLabelCode() {
 		return labelCode;
 	}
@@ -42,6 +44,7 @@ public class Label implements java.io.Serializable {
 		this.labelCode = labelCode;
 	}
 
+	@Column(name = "label_value",  insertable = false, updatable = false)
 	public String getLabelValue() {
 		return labelValue;
 	}
@@ -50,6 +53,7 @@ public class Label implements java.io.Serializable {
 		this.labelValue = labelValue;
 	}
 
+	@Column(name = "label_language")
 	public String getLabelLanguage() {
 		return labelLanguage;
 	}

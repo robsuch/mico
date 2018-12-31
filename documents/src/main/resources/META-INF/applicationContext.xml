@@ -20,17 +20,15 @@
         http://www.springframework.org/schema/context/spring-context.xsd ">
 
 
-<context:annotation-config/>
+ <context:annotation-config/>
 	<mvc:annotation-driven />
-	<context:component-scan base-package="org.flix.tools.documents"/>
-
+	<context:component-scan base-package="org.flix.tools.documents" />
+ 
     
 	<!-- Enable Spring AOP support -->
 	<aop:aspectj-autoproxy/>
 
-<util:properties id="applicationProperties" location="file:$classpath:/resources/application.properties"/>        
-<context:property-placeholder		location="file:$classpath:/resources/application.properties		ignore-resource-not-found="false"/>
-
+<util:properties id="applicationProperties" location="classpath:application.properties" />  
 
 	<!-- JDBC transaction manager -->
 	<tx:annotation-driven order="1" transaction-manager="transactionManager"/>

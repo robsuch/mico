@@ -13,7 +13,10 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public abstract class AbstractGenericDAOImpl {
-	@PersistenceContext(name = "#{applicationProperties.db.datasource}")
+	
+	//(name = "#{applicationProperties.db.datasource}")
+	
+	@PersistenceContext
 	protected EntityManager em;
 
 	/**
